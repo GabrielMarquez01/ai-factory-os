@@ -248,12 +248,126 @@ Ver [`docs/como-adaptar.md`](docs/como-adaptar.md) para el proceso paso a paso.
 
 ---
 
+### 5. Socio Estratégico — el agente que piensa desde múltiples ángulos
+
+Esta es quizás la metodología menos documentada pero la más valiosa operativamente.
+
+El riesgo de un sistema de agentes bien construido es que ejecute muy bien las **instrucciones incorrectas**. Un agente que obedece sin pensar multiplica errores de dirección, no los corrige.
+
+La solución es darle al agente una capa de **pensamiento estratégico multi-perspectiva** antes de ejecutar cualquier iniciativa de peso:
+
+```
+Antes de arrancar una iniciativa, el agente fuerza 4 perspectivas:
+
+1. CEO (norte estratégico)
+   └── ¿Esto mueve el negocio hacia el objetivo trimestral?
+       ¿O es una optimización local sin impacto en la dirección?
+
+2. Mercado / Competencia
+   └── ¿Qué hace el mercado que yo aún no?
+       ¿Qué hueco existe que nadie está ocupando?
+       ¿Qué hipótesis estoy asumiendo sobre el cliente que podría estar equivocada?
+
+3. Riesgo / Anti-patrón
+   └── ¿Qué puede salir mal? ¿Cuál es el peor escenario?
+       ¿Estoy construyendo antes de validar?
+       ¿Existe un camino más simple que omití?
+
+4. Usuario final (el avatar)
+   └── ¿Esto resuelve un dolor real del avatar, o un dolor que yo imagino que tiene?
+       ¿Lo haría en la pantalla de su teléfono a las 2am mientras da pecho?
+```
+
+**La regla práctica:** Cualquier iniciativa que involucre gasto, contratación o construcción de más de 3 días pasa primero por este filtro de 4 perspectivas. El output es un documento de 1 página con la postura desde cada ángulo — y solo si los 4 apuntan en la misma dirección se procede.
+
+Cuando hay conflicto entre perspectivas (el CEO quiere escalar, el análisis de riesgo dice "espera señal de mercado"), ese conflicto se convierte en un **gate de validación**: no se resuelve por opinión sino por experimento.
+
+**Cómo se implementa técnicamente:**
+
+```markdown
+# En cada skill estratégico existe una sección: "Anti-patrones"
+# Estos no son solo advertencias — son perspectivas formalizadas.
+
+Ejemplo del skill market-validation-engine:
+- Evitar: "validar" sin umbrales numéricos (perspectiva CEO: sin métrica no hay decisión)
+- Evitar: construir antes de señal de mercado (perspectiva riesgo)
+- Evitar: métricas vanidosas sin impacto de negocio (perspectiva usuario)
+- Evitar: feedback anecdótico como evidencia representativa (perspectiva mercado)
+```
+
+El socio estratégico no es un agente separado — es una **capa de razonamiento** que se activa antes de ejecutar. Es lo que diferencia un sistema que hace lo que le dices de uno que te ayuda a pensar si lo que le dices es correcto.
+
+---
+
 ### Sobre la Estrategia de Precios
 
 Se incluye el razonamiento de precios completo (con preguntas abiertas) en:
 📄 [`docs/estrategia-precios.md`](docs/estrategia-precios.md)
 
 Feedback bienvenido — especialmente en el modelo Founders y el punto de precio del freemium.
+
+---
+
+## Repositorios que Alimentan el Ecosistema
+
+Este sistema no surgió de un solo repositorio. Es el resultado de integrar varios proyectos que evolucionaron en paralelo y se fueron conectando con un patrón explícito.
+
+### La arquitectura de integración
+
+```
+SaaS Factory V5          →   Construye DENTRO del producto
+(Next.js + Supabase)         Stack fijo, golden path, skills de construcción
+
+OpenGravity              →   Orquesta ENTRE productos
+(Agent OS)                   47 skills de marketing/ventas/operación,
+                             26 workflows DAG, Engram como cerebro central
+
+Business OS              →   Controla el portafolio
+(Dashboard HTML)             5 pilares en una vista, gates humanos, KPIs
+
+Productos activos        →   Consumen el stack y el OS
+(Primeras Miradas,           Cada producto hereda patterns validados
+ mi·ma, PageDrop,            de los proyectos anteriores
+ Academy, Prospecta)
+```
+
+**Regla de integración** (documentada en Engram):
+> SaaS Factory opera **dentro** de un producto. OpenGravity opera **entre** productos.
+> Cuando hay conflicto de definición, V5 = herramienta de ejecución; OpenGravity = fuente de verdad del ecosistema.
+
+---
+
+### Proyectos que dejaron patterns reusables
+
+| Proyecto | Qué aportó al ecosistema |
+|----------|--------------------------|
+| **Primeras Miradas** (funnel ebook) | Motor de email nurturing D+3/D+7/D+14 · Agente Sofía v2.2 L2 certificado · Lógica 7-11-4 de conversación |
+| **mi·ma** (app tracker bebés) | Modelo freemium con guest mode · Auth anónima 7 días · Push notifications predictivas por edad |
+| **Prospecta** (cold email B2B) | Pack reusable de cold email: Resend + dry-run + compliance unsubscribe · Extraído como `pack-cold-email` |
+| **Los Tres Amigos** (canal animación) | Pipeline COPPA-safe: motor sensorial → HTML→PNG → FFmpeg → YouTube API sin intervención manual |
+| **PageDrop** (landing builder) | `premium-ui-system` con estándar de diseño "Websites Increíbles v5" · Framer Motion integrado |
+| **Cirugía Estética IA** | Skills de calificación de leads + RAG sobre casos clínicos |
+| **Academy** | Estructura de onboarding en fases + drip content automatizado |
+
+---
+
+### El patrón de extracción (cómo un proyecto se vuelve skill reusable)
+
+```
+Proyecto terminado
+    ↓
+Identificar el núcleo reusable (≠ lo que es específico del nicho)
+    ↓
+Extraer a SKILL.md: Rol + Restricciones + Proceso + Ejemplo de output
+    ↓
+Versionar en skills/ como unidad independiente
+    ↓
+Siguiente proyecto hereda el skill sin reconstruir desde cero
+```
+
+Ejemplo real: el motor de cold email de Prospecta tomó 3 semanas construirlo.
+Extraído como `pack-cold-email`, el siguiente proyecto lo integra en 1 hora.
+**Este es el compounding del sistema — cada proyecto deja al siguiente más inteligente.**
 
 ---
 
