@@ -1,14 +1,8 @@
 # 🏭 Business OS — Sistema Operativo Para Tu Negocio con IA
 
-> **"La fábrica, no el coche."**
+> **"Un sistema operativo de negocio construido con IA — listo para clonar, adaptar y escalar al tuyo."**
 >
-> Este repositorio es el **MÉTODO** — la arquitectura, los procesos y la ingeniería para construir tu propio Business OS.
-> No es la implementación de ningún negocio en particular. Es la fábrica que te permite construir el tuyo.
->
-> Como Toyota publicó "The Toyota Way" (el método de manufactura) sin revelar los planos del Camry —
-> aquí está el método para operar un negocio con IA, no el negocio que lo usa.
-
-**Lo que incluye:** 38 skills adaptables · 8 workflows DAG · código funcional en `templates/` · harness AI-agnóstico (Claude, GPT, Gemini, Groq, Llama, Ollama) · `SETUP.md` para empezar en 30 minutos
+> 38 skills especializados · 8 workflows DAG · código funcional en `templates/` · harness de evaluación AI-agnóstico · setup en 30 minutos.
 
 ---
 
