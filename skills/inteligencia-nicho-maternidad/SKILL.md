@@ -1,38 +1,143 @@
 ---
 name: inteligencia-nicho-maternidad
-description: Experto vivo en el nicho de maternidad y bebés 0-6 meses en LATAM. Mantiene el perfil de audiencia, lenguaje, tendencias de contenido parenting y vigilancia de competencia. Úsalo cuando se pida "mi nicho", "mi audiencia", "tendencias de maternidad" o al crear hooks, captions y calendario de contenido.
+description: Plantilla de Inteligencia de Nicho — ilustrada con el nicho de maternidad 0-6m LATAM. Úsala como MÉTODO para construir la inteligencia de TU nicho, no como la inteligencia en sí.
 ---
 
-# Skill: Inteligencia de Nicho — Maternidad LATAM
+# Skill: Inteligencia de Nicho
+## (Plantilla — ejemplo con nicho: Maternidad 0-6m LATAM)
 
-## Cuándo usar este skill
-- Antes de escribir cualquier hook, caption, guion o email nuevo del ecosistema
-- Cuando el usuario pregunte por su audiencia, competencia o tendencias del nicho
-- Al refrescar el calendario de contenido (¿qué temas están funcionando este mes?)
-- Como input de la Fase 1 del workflow `vibe-marketing-primeras-miradas`
+> **Cómo usar esta plantilla:**
+> El nicho de maternidad es el ejemplo concreto que hace visible el método.
+> Para tu negocio, reemplaza cada sección con los datos de tu nicho real.
+> El MÉTODO es lo que te llevas. Los datos de maternidad son solo ilustración.
 
-## Perfil de audiencia (mantener actualizado)
-**Avatar principal: "Mamá primeriza es-MX"**
-- Mujer 22-38 años, México/LATAM, bebé de 0-6 meses (o embarazo tardío)
-- Estado emocional: amor intenso + agotamiento + culpa + miedo a "hacerlo mal"
-- Dónde está: TikTok e Instagram (scroll nocturno durante tomas), grupos de WhatsApp/Facebook de maternidad
-- Qué consume: contenido corto que la VALIDA primero y le enseña después; desconfía del "experto frío" y de la venta agresiva
-- Lenguaje: cercano, de mamá a mamá; términos como "porteo", "hora de las brujas", "brote de crecimiento", "apego"
-- Fuente canónica de dolores y tono: `workspace/primeras-miradas-ecosistema/agents/ag_sofia_frontoffice/PLAYBOOK_EMPATIA.md` y los 10 dolores de `GUIONES_VIRALES.md`
+---
 
-## Protocolo de investigación (con WebSearch / deep-research)
-1. **Tendencias del mes**: formatos y audios que están funcionando en parenting es-MX (TikTok Creative Center, hashtags del nicho)
-2. **Competencia**: 3-5 cuentas referentes del nicho en español — qué publican, qué les funciona, qué hueco dejan
-3. **Preguntas reales de la audiencia**: comentarios en cuentas del nicho, grupos públicos, búsquedas frecuentes ("por qué llora mi bebé en la tarde")
-4. **Sensibilidades**: temas que generan backlash (juicios sobre lactancia/fórmula, colecho, métodos de sueño) → tratar SIEMPRE sin juzgar, validando ambas opciones
+## El Problema Que Este Skill Resuelve
 
-## Reglas duras del nicho
-- **Cero claims médicos o de desarrollo** ("será más inteligente" PROHIBIDO). Marco permitido: "acompañar", "entender", "ideas para jugar", citando compendio de fuentes (AAP/OMS/CDC) como hace el ebook
-- No mostrar bebés reales identificables en contenido propio (usar manos, tarjetas, personajes 3D: Bruno/Marcelo/Máximo)
-- Nunca alarmar: ante un dolor, primero validar, luego explicar causa natural, luego tip práctico (estructura de los guiones)
-- Temas polémicos del nicho: postura neutral y empática siempre
+Sin inteligencia de nicho, tu agente habla como un manual corporativo.
+Con ella, habla como alguien que conoce íntimamente a tu audiencia — su lenguaje exacto, sus miedos reales, lo que la activa y lo que la aleja.
 
-## Outputs
-- Informe periódico → `workspace/primeras-miradas-ecosistema/marketing/investigacion/` (formato: `nicho-YYYY-MM.md`; hallazgos + 5 ideas de contenido accionables)
-- Hooks/ángulos nuevos → proponer como variaciones en `marketing/calendario-contenido-30-dias.md`
-- Hallazgo estratégico (cambio de tendencia, competidor fuerte nuevo) → registrar en `engram/primeras-miradas.md`
+La diferencia entre "el bebé puede mostrar señales de hambre" y "tu bb te va a pedir lechita con estas señales" es inteligencia de nicho encodada como restricción técnica.
+
+---
+
+## Estructura del Perfil de Nicho (el método)
+
+### 1. Avatar Principal
+
+Define con precisión quirúrgica a UNA persona, no a un grupo:
+
+```markdown
+Avatar: [nombre interno]
+Quién es: [edad, ubicación, situación de vida específica]
+Estado emocional dominante: [qué siente la mayoría del tiempo en relación a tu producto]
+Dónde está online: [plataformas específicas, horarios de consumo]
+Qué consume: [formatos, tonos, tipos de contenido que le funcionan]
+```
+
+**Ejemplo (maternidad):**
+```
+Avatar: "Mamá primeriza LATAM"
+Quién es: Mujer 22-38 años, México/LATAM, bebé 0-6 meses
+Estado emocional: amor intenso + agotamiento + culpa + miedo a "hacerlo mal"
+Dónde está: TikTok e Instagram (scroll nocturno durante tomas)
+Qué consume: contenido corto que VALIDA primero y enseña después
+```
+
+### 2. Vocabulario del Nicho
+
+Las palabras exactas que usa tu avatar — no las que tú usas, las que ELLOS usan:
+
+```markdown
+USAR SIEMPRE:     [palabras/frases de tu comunidad]
+NUNCA USAR:       [palabras que suenan a "experto frío" o ajeno]
+SEÑALES DE DOLOR: [cómo describe sus problemas en sus propias palabras]
+```
+
+**Ejemplo (maternidad):**
+```
+USAR:      "porteo", "hora de las brujas", "brote de crecimiento", "bb", "mamis"
+NUNCA:     "neonato", "progenitora", "paciente", "lactante"
+DOLOR:     "no sé por qué llora", "siento que lo hago mal", "¿es normal que...?"
+```
+
+### 3. Reglas Duras del Nicho
+
+Límites que no se cruzan — por ética, legal, o por cómo funciona la audiencia:
+
+```markdown
+- [Claims que no puedes hacer aunque sean verdad percibida]
+- [Temas que requieren postura neutral — polarización interna del nicho]
+- [Contenido que genera rechazo o pérdida de confianza]
+```
+
+**Ejemplo (maternidad):**
+```
+- Cero claims médicos o de desarrollo ("será más inteligente" → prohibido)
+- Temas polémicos (lactancia vs fórmula, métodos de sueño) → neutral siempre
+- Nunca alarmar: validar primero, causa natural, tip práctico — en ese orden
+```
+
+### 4. Protocolo de Investigación Continua
+
+Cómo el agente mantiene la inteligencia actualizada, no solo al inicio:
+
+```
+1. TENDENCIAS DEL MES
+   → ¿Qué formatos y temas funcionan ahora en tu nicho?
+   → Fuentes: Creative Centers de TikTok/Meta, hashtags del nicho, top contenido
+
+2. COMPETENCIA
+   → 3-5 referentes del nicho: ¿qué publican, qué les funciona, qué hueco dejan?
+
+3. VOZ REAL DE LA AUDIENCIA
+   → Comentarios en contenido del nicho, grupos públicos, búsquedas frecuentes
+   → Esto es oro: el lenguaje exacto que usan para describir sus problemas
+
+4. SENSIBILIDADES ACTIVAS
+   → ¿Qué genera backlash esta semana? → evitar o manejar con cuidado
+```
+
+### 5. Dónde Vive Esta Inteligencia
+
+```
+[tu-repo]/
+├── research/
+│   └── nicho-YYYY-MM.md     ← informe mensual: hallazgos + 5 ideas accionables
+├── content/
+│   └── calendario.md        ← hooks y ángulos derivados de la investigación
+└── memory/
+    └── engram.md             ← hallazgos estratégicos duraderos (cambios de tendencia)
+```
+
+---
+
+## Cómo Adaptar Este Skill a Tu Nicho
+
+1. Copia este archivo → `skills/inteligencia-nicho-[TU-NICHO]/SKILL.md`
+2. Reemplaza el ejemplo de maternidad con los datos de tu audiencia real
+3. Llena el vocabulario con palabras que ELLOS usan (no las tuyas)
+4. Define las reglas duras de tu sector (legales, éticas, de marca)
+5. Actualiza mensualmente con investigación real
+
+---
+
+## Recursos para Construir Tu Propia Inteligencia de Nicho
+
+| Fuente | Qué te da |
+|--------|-----------|
+| TikTok Creative Center | Tendencias de contenido por categoría y región |
+| Answer the Public / AlsoAsked | Preguntas reales de tu audiencia en buscadores |
+| Comentarios de YouTube | Lenguaje más honesto y sin filtro del nicho |
+| Grupos de Facebook/Reddit del nicho | Dolores expresados tal como los sienten |
+| Reseñas de Amazon de productos similares | Frustraciones y deseos literales |
+
+---
+
+## Cuándo Invocar Este Skill
+
+- Antes de escribir cualquier hook, caption, guión o email para tu audiencia
+- Al crear un agente que va a hablar con usuarios de este nicho
+- Para refrescar el calendario de contenido con tendencias actuales
+- Como input de cualquier workflow de marketing o contenido
