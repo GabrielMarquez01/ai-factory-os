@@ -295,21 +295,24 @@ git submodule add https://github.com/GabrielMarquez01/ai-factory-os .business-os
 # El agente puede leer los skills de ambos repositorios
 ```
 
-### Business OS Template (Comunidad)
+### Business OS Template (Comunidad — Daniel)
 
-Si llegaste aquí a través de Daniel o la comunidad de SaaS Factory — este repositorio es la implementación de referencia del patrón Business OS aplicado a un caso real.
+El patrón genérico que inspiró este repositorio:
+[github.com/GabrielMarquez01/business-os-template](https://github.com/GabrielMarquez01/business-os-template)
+
+Incluye: **Mission Control dashboard + ClaudeClaw (Claude Agent SDK) + Finance OS**. Full-stack TypeScript, Next.js 16, Supabase.
 
 **La relación:**
 ```
-Business OS Template (patrón genérico)
-    ↓ se instancia como
-Business OS de tu negocio (este repo = ejemplo real)
+business-os-template (patrón genérico de Daniel)
+    ↓ se instancia y adapta como
+Business OS de tu negocio (este repo = ejemplo real con skills + workflows)
     ↓ se opera con
 SaaS Factory V5 (el agente que construye y mejora)
 ```
 
-Para conectar con la comunidad y ver otros casos de estudio:
-- Comparte tu fork en la comunidad de SaaS Factory
+Para conectar con la comunidad:
+- Comparte tu fork en la comunidad de SaaS Factory (saas-factory-setup)
 - Contribuye nuevos skills con el formato `SKILL.md`
 - Adapta el skill `inteligencia-nicho-maternidad` a tu nicho y compártelo
 

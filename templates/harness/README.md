@@ -138,7 +138,24 @@ Un agente L2 es el que puede correr en producción de noche sin que nadie lo vig
 | Tu API local | *(default)* | `LOCAL_API_URL` | `http://localhost:3000/api/chat` |
 | OpenAI | `--provider openai` | `OPENAI_API_KEY` | gpt-4o-mini recomendado para tests |
 | Groq | `--provider groq` | `GROQ_API_KEY` | Más rápido, más barato |
-| Anthropic | `--provider anthropic` | `ANTHROPIC_API_KEY` | claude-haiku recomendado |
-| Gemini | `--provider gemini` | `GEMINI_API_KEY` | gemini-2.0-flash |
+| Anthropic/Claude | `--provider anthropic` | `ANTHROPIC_API_KEY` | claude-haiku recomendado |
+| Gemini / Antigravity | `--provider gemini` | `GEMINI_API_KEY` | gemini-3.5-flash · también funciona con agentes Antigravity |
 | Ollama | `--provider ollama` | *(ninguna)* | Gratis, local, llama3.2 recomendado |
-| Cualquier OpenAI-compatible | `--provider openai-compatible --base-url URL` | opcional | Together, Fireworks, etc. |
+| Codex / OpenAI-compatible | `--provider openai-compatible --base-url URL` | opcional | Together, Fireworks, Codex API, etc. |
+
+### Antigravity (Google I/O 2026)
+
+Antigravity usa Gemini como motor. Para testear un agente Antigravity:
+
+```bash
+# Forma rápida — usa el provider gemini estándar
+GEMINI_API_KEY=AI... node run-harness.js --provider gemini --model gemini-3.5-flash
+
+# Forma específica — Antigravity Interactions API
+GEMINI_API_KEY=AI... node run-harness.js \
+  --provider openai-compatible \
+  --base-url https://generativelanguage.googleapis.com/v1beta \
+  --model antigravity-preview-05-2026
+```
+
+El harness también puede correr DENTRO de Antigravity IDE — tiene terminal integrado y soporta Node.js.
