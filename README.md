@@ -316,17 +316,21 @@ Para conectar con la comunidad:
 - Contribuye nuevos skills con el formato `SKILL.md`
 - Adapta el skill `inteligencia-nicho-maternidad` a tu nicho y compártelo
 
-### everything-claude-code (ECC)
+### Fuentes e Inspiración
 
-Recurso de referencia de la comunidad Claude Code con patrones avanzados:
+Este Business OS se construyó sobre hombros de gigantes. El documento completo de referencias está en [`docs/fuentes-inspiracion.md`](docs/fuentes-inspiracion.md). Resumen de las más importantes:
 
-```
-github.com/disler/everything-claude-code
-
-Este repo adopta el patrón "Continuous Learning" de ECC
-aplicado al contexto de operación de negocio:
-Cada skill mejora con el uso → el sistema se vuelve más inteligente con el tiempo
-```
+| Repositorio | Qué aportó |
+|-------------|-----------|
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | Ganador hackathon Anthropic · arquitectura SKILL.md · 185K+ ⭐ |
+| [Karpathy LLM Wiki Gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) | Protocolo de memoria acumulativa · el agente escribe su propia wiki |
+| [paperclipai/paperclip](https://github.com/paperclipai/paperclip) | Orquestación como "empresa de agentes" · 42K+ ⭐ |
+| [wshobson/agents](https://github.com/wshobson/agents) | 194 agentes · 26 categorías · multi-harness (Claude+Codex+Cursor+Gemini) · 36K+ ⭐ |
+| [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 1000+ skills de equipos oficiales (Anthropic, Stripe, Vercel…) |
+| [anthropics/skills](https://github.com/anthropics/skills) | Formato canónico SKILL.md oficial |
+| [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) | 337 skills · agentes C-level · multi-dominio |
+| [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | Skills para ciencia · 140 skills + 100+ bases de datos |
+| [victor-iyi/llm-os](https://github.com/victor-iyi/llm-os) | LLM OS (visión de Karpathy) · el LLM como kernel |
 
 ---
 
