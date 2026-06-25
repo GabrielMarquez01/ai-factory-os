@@ -37,9 +37,9 @@ Obligatorio antes de despedirse (`notify_user`) si se han realizado cambios sign
 
 ## 🚰 Anti-Fuga Cross-Repo (regla dura)
 
-El ecosistema vive en VARIOS repos (OpenGravity, BBtoGO, primeras-miradas, academy...), pero la memoria central vive AQUÍ (`engram/`). **Trabajo hecho en otro repo que no vuelca su resumen al engram de OpenGravity = trabajo invisible = fuga de memoria** (caso real: el MVP de Mima estuvo días desplegado en Vercel sin que ninguna sesión de OpenGravity lo supiera).
+El ecosistema vive en VARIOS repos (uno por producto, más el repo central del Business OS), pero la memoria central vive en el Engram del repo principal. **Trabajo hecho en un repo secundario que no vuelca su resumen al Engram central = trabajo invisible = fuga de memoria** (ejemplo: un producto desplegado en producción sin que ninguna sesión del Business OS lo supiera).
 
-1. Toda sesión sobre un repo del ecosistema cierra empujando su What/Why/Where/Learned al engram correspondiente de OpenGravity (cada engram de proyecto tiene su "protocolo anti-fuga" con el prompt listo — ver `engram/mima-bbtogo.md`).
+1. Toda sesión sobre un repo secundario cierra empujando su What/Why/Where/Learned al Engram central (cada engram de proyecto tiene su "protocolo anti-fuga" con el prompt listo).
 2. Si esa sesión no tiene acceso a OpenGravity: el humano pega el resumen en una sesión de OpenGravity y esta lo registra.
 3. Al INICIAR sesión aquí: si un engram de proyecto externo tiene >7 días sin actualizar y el proyecto está activo, preguntar al humano si hubo avances no registrados.
 

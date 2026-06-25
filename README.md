@@ -386,7 +386,6 @@ git commit -m "feat: mi business OS — adaptado para [tu nicho]"
 | Producto | URL | Estado |
 |---------|-----|--------|
 | Agente Sofía (ventas 24/7) | primerasmiradas.com | ✅ Producción |
-| App mi·ma (tracker bebés) | somosmima.app | ✅ Producción |
 
 ---
 

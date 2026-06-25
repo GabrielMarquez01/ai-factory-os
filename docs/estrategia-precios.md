@@ -1,113 +1,135 @@
-# Estrategia de Precios — Decisiones y Razonamiento
+# Estrategia de Precios — Marco de Decisión
 
-> Este documento es parte del caso de estudio.
-> El objetivo no es presumir los números sino compartir el **proceso de decisión**
-> para que lo evalúes, lo critiques y lo adaptes a tu contexto.
-
----
-
-## El mercado de referencia
-
-El competidor principal en el nicho es **Huckleberry** (tracker de sueño para bebés):
-- Precio: ~$14 USD/mes (~$240 MXN/mes al tipo de cambio actual)
-- Fortaleza: líder de mercado en EE.UU., UX pulida
-- Debilidades: solo sueño, solo inglés, sin contexto LatAm, sin agente de IA
-
-**La hipótesis:** una app con más funciones, en español, con IA incluida y a menor precio
-gana en México, Colombia, Argentina y España antes de que Huckleberry voltee a mirar LatAm.
+> Este documento comparte el **proceso de razonamiento** detrás de las decisiones de precio,
+> no los números de ningún producto en particular.
+> Adáptalo a tu contexto, tu nicho y tu mercado.
 
 ---
 
-## Modelo freemium (app mi·ma)
+## 1. Ancla de Precio: Partir del Competidor
+
+Antes de definir cualquier precio, identifica al líder del mercado en tu nicho:
+
+```markdown
+COMPETIDOR REFERENCIA:
+- Precio actual: $X USD/mes
+- Fortaleza: [qué hace bien]
+- Debilidad estructural: [qué NO hace o qué mercado ignora]
+```
+
+**La hipótesis de entrada a mercado:**
+¿Puedes ofrecer más valor (funciones, idioma, contexto local, IA incluida)
+a un precio menor y ganar el segmento que el líder ignora?
+
+Si la respuesta es sí, ese delta de precio es tu ventaja de penetración.
+
+---
+
+## 2. Modelo Freemium — La Estructura Base
 
 ```
 GRATIS (siempre)
-├── Registro del bebé
-├── Bitácora: sueño, tomas, pañales, síntomas
-├── Curvas de crecimiento WHO
-├── Hitos del desarrollo + banderas rojas
-├── Cartilla de vacunación (7 países)
-├── Sofia IA: 3 consultas/mes
-└── Modo invitado: 7 días sin registro
+├── [funcionalidad central que demuestra el valor sin fricción]
+├── [funcionalidad que crea hábito diario]
+├── [funcionalidad que genera datos del usuario → mejora el producto]
+└── [acceso limitado al diferenciador principal — suficiente para enganchar]
 
-PRO ($99 MXN/mes | $799 MXN/año)
-├── Sofia IA: consultas ilimitadas
-├── Insights 30 días (tendencias, patrones)
-├── Memoria persistente de Sofia entre sesiones
-└── [próximamente] Predicciones de ventana de sueño
+PRO ($X/mes | $Y/año)
+├── [diferenciador principal sin límite]
+├── [funcionalidad de retención / insights]
+├── [memoria / personalización]
+└── [funcionalidades roadmap próximas]
 ```
 
 **Razonamiento del precio:**
-- $99 MXN/mes = ~$5 USD = precio de 2 cafés en México
-- 67% más barato que Huckleberry en su mercado principal
-- El ancla de precio usa al competidor como referencia implícita
-- El annual ($799) = 8 meses pagados, 4 gratis → incentiva retención
+- El precio mensual debe ser < 1% del ingreso mensual de tu avatar
+- El precio anual = 8-10 meses → 2-4 meses "gratis" → incentiva conversión anual
+- Ancla implícita: comparar mentalmente con el competidor, no con otros gastos
+
+**Cómo definir el precio:**
+1. ¿Cuánto paga tu avatar por el competidor líder?
+2. ¿Cuánto vale tu diferenciador para él? (willingness to pay, no tu costo)
+3. ¿Qué precio lo hace decidir en < 30 segundos sin necesitar aprobación de nadie?
 
 ---
 
-## Modelo Founders (acceso vitalicio)
+## 3. Modelo Founders — Validación Antes de Construir
 
 ```
-FOUNDERS — $99 MXN/mes de por vida (cupo: 10 personas)
+FOUNDERS — $X/mes de por vida (cupo cerrado: N personas)
 ├── Todo lo de Pro, siempre
-├── Acceso a features antes que nadie
+├── Acceso anticipado a features
 ├── Voz directa en el roadmap
 └── Precio bloqueado para siempre
 ```
 
-**Razonamiento:**
-- El cupo de 10 crea urgencia real (no artificial)
-- Se vende 1:1 únicamente a compradores del ebook / leads calientes
-- El precio mensual recurrente (no pago único) genera ingreso predecible
-- Valida que alguien paga antes de construir la infraestructura de pagos completa
-- El acceso inicial se da MANUAL (has_access = true por email) → cero fricción técnica
+**Por qué funciona:**
+- El cupo cerrado crea urgencia real, no artificial — cuando se llena, se llena
+- Se vende solo a leads calificados (compradores previos, lista de espera, contacto directo)
+- Precio recurrente (no pago único) → valida disposición a pagar mensualmente
+- El acceso inicial puede darse manualmente → cero fricción técnica para lanzar
 
-**Gate de validación aplicado aquí:**
-> ¿10 founders pagadas o con compromiso explícito de pago?
-> Si sí → acelerar construcción. Si no → no construir más features.
+**Gate de validación:**
+```
+¿N founders con pago o compromiso explícito?
+  SÍ → acelerar construcción
+  NO → no construir más features hasta conseguirlos
+```
 
 ---
 
-## Infoproducto (ebook)
+## 4. Infoproducto — Entrada al Funnel
 
 ```
-Ebook PDF — $150 MXN (pago único)
-├── Estimulación visual 0–6 meses
-├── Tarjetas de alto contraste descargables
-└── Rutinas por etapa de desarrollo
+Infoproducto (PDF / curso / template) — $X pago único
+├── [contenido de valor standalone — funciona solo]
+├── [material descargable / recursos]
+└── [resultado específico prometido y entregado]
 ```
 
-**Razonamiento:**
-- Precio de entrada bajo → primera transacción fácil
-- Función principal: calificar al lead (quien paga $150 confía en la marca)
-- El ebook es el "top of funnel" hacia mi·ma Pro y Founders
+**Función estratégica del infoproducto:**
+- Precio de entrada bajo → primera transacción fácil, primera confianza ganada
+- Califica al lead: quien paga $X confía en la marca → es candidato al producto principal
 - Sin descuentos → protege el valor percibido del contenido
 
 ---
 
-## La lógica del sistema completo
+## 5. La Lógica del Sistema Completo
+
+El objetivo no es vender un producto — es construir un funnel donde cada paso
+financia el siguiente y prepara al usuario para el siguiente precio:
 
 ```
-Reel gratuito → visita primerasmiradas.com → Sofia responde gratis
-    ↓
-Compra ebook $150 MXN → lead calificado → nurturing D+3/D+7/D+14
-    ↓
-DM / contacto → oferta Founders $99/mes de por vida
-    ↓
-App mi·ma → uso diario → conversión a Pro $99/mes o $799/año
+Contenido gratuito (redes / SEO)
+    ↓ genera tráfico y confianza
+Infoproducto ($X pago único) → califica el lead
+    ↓ nurturing D+3 / D+7 / D+14
+Producto principal freemium → hábito diario
+    ↓ conversión cuando el valor es evidente
+Pro ($X/mes recurrente) → ingreso predecible
+    ↓ segmento de mayor compromiso
+Founders ($X/mes de por vida, cupo cerrado) → early adopters
 ```
 
 Cada pilar alimenta al siguiente. El precio más bajo del funnel
-($150) financia la confianza para el precio recurrente ($99/mes).
+financia la confianza para el precio recurrente.
 
 ---
 
-## Preguntas abiertas (feedback bienvenido)
+## 6. Preguntas para Definir Tu Estrategia
 
-1. ¿$99 MXN/mes es demasiado bajo para sostener el negocio a largo plazo, o es el precio correcto para penetrar LatAm primero?
-2. ¿El modelo Founders de cupo 10 crea suficiente urgencia, o conviene aumentar el cupo?
-3. ¿Freemium con 3 consultas de Sofia/mes es suficiente para demostrar valor antes del paywall, o debería ser más generoso?
-4. ¿Tiene sentido tener DOS productos de entrada (ebook + app) o es mejor consolidar en uno?
+1. ¿Cuál es el precio del competidor líder en tu nicho? ¿Qué segmento ignora?
+2. ¿Tu avatar decide solo o necesita aprobación (pareja, empresa)?
+3. ¿Qué formato de pago prefiere tu mercado? (mensual / anual / pago único)
+4. ¿Tu producto crea hábito diario o es uso ocasional? (define si freemium aplica)
+5. ¿Tienes un infoproducto que pueda ser el primer paso del funnel?
+6. ¿Cuántos Founders necesitas para validar antes de construir la infraestructura completa?
 
-> Este documento existe para pensar en voz alta, no para presumir.
-> Si ves algo que no tiene sentido, dilo — es más valioso que un like.
+---
+
+## Recursos
+
+- **Stripe / Polar** → pagos recurrentes y one-time desde día 1
+- **Lemon Squeezy** → alternativa simple para infoproductos
+- **Precio por valor percibido, no por costo** — el costo de construir no determina el precio
+- **Patrick McKenzie (patio11)** → referencia en pricing para software (posts en Kalzumeus)
