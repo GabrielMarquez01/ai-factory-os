@@ -50,7 +50,7 @@ OpenGravity/
 
 **2. PIPELINES DE CONTENIDO — $0 de infraestructura**
 - Canal educativo: guión → TTS → escenas HTML→PNG → FFmpeg → YouTube API
-- Canal de animación: personaje con identidad visual única → COPPA-safe → pipeline CI/CD
+- Canal de animación: personaje con identidad visual única → pipeline CI/CD
 - Resultado: episodios producidos sin intervención manual después del setup
 
 **3. EMAIL NURTURING AUTOMÁTICO**
@@ -68,7 +68,7 @@ OpenGravity/
 - Next.js + Supabase + auth anónima ("7 días gratis sin registro")
 - Seguimiento de sueño, tomas, pañales + predicciones por edad
 - Modelo Founders: acceso vitalicio a precio de lanzamiento
-- Push notifications predictivas por edad exacta del bebé
+- Push notifications activadas por etapa de desarrollo del bebé
 
 ---
 
@@ -308,65 +308,62 @@ Feedback bienvenido — especialmente en el modelo Founders y el punto de precio
 
 ---
 
-## Repositorios que Alimentan el Ecosistema
+## Cómo se Integran Múltiples Repositorios
 
-Este sistema no surgió de un solo repositorio. Es el resultado de integrar varios proyectos que evolucionaron en paralelo y se fueron conectando con un patrón explícito.
+Este sistema no surgió de un solo repositorio. Es el resultado de integrar varios proyectos que evolucionaron en paralelo con un patrón explícito de separación de responsabilidades.
 
-### La arquitectura de integración
+### La arquitectura de capas
 
 ```
-SaaS Factory V5          →   Construye DENTRO del producto
-(Next.js + Supabase)         Stack fijo, golden path, skills de construcción
+Capa de construcción     →   Construye DENTRO de cada producto
+(framework + stack)          Stack fijo, golden path, skills técnicos
 
-OpenGravity              →   Orquesta ENTRE productos
-(Agent OS)                   47 skills de marketing/ventas/operación,
-                             26 workflows DAG, Engram como cerebro central
+Capa de orquestación     →   Coordina ENTRE productos
+(Agent OS)                   Skills de negocio, workflows DAG,
+                             Engram como cerebro central compartido
 
-Business OS              →   Controla el portafolio
-(Dashboard HTML)             5 pilares en una vista, gates humanos, KPIs
+Capa de control          →   Observa el portafolio completo
+(Business OS)                Todos los pilares en una vista,
+                             gates humanos, KPIs por vertical
 
-Productos activos        →   Consumen el stack y el OS
-(Primeras Miradas,           Cada producto hereda patterns validados
- mi·ma, PageDrop,            de los proyectos anteriores
- Academy, Prospecta)
+Productos activos        →   Consumen las capas superiores
+                             Cada producto hereda patterns validados
+                             de los proyectos anteriores
 ```
 
 **Regla de integración** (documentada en Engram):
-> SaaS Factory opera **dentro** de un producto. OpenGravity opera **entre** productos.
-> Cuando hay conflicto de definición, V5 = herramienta de ejecución; OpenGravity = fuente de verdad del ecosistema.
-
----
-
-### Proyectos que dejaron patterns reusables
-
-| Proyecto | Qué aportó al ecosistema |
-|----------|--------------------------|
-| **Primeras Miradas** (funnel ebook) | Motor de email nurturing D+3/D+7/D+14 · Agente Sofía v2.2 L2 certificado · Lógica 7-11-4 de conversación |
-| **mi·ma** (app tracker bebés) | Modelo freemium con guest mode · Auth anónima 7 días · Push notifications predictivas por edad |
-| **Prospecta** (cold email B2B) | Pack reusable de cold email: Resend + dry-run + compliance unsubscribe · Extraído como `pack-cold-email` |
-| **Los Tres Amigos** (canal animación) | Pipeline COPPA-safe: motor sensorial → HTML→PNG → FFmpeg → YouTube API sin intervención manual |
-| **PageDrop** (landing builder) | `premium-ui-system` con estándar de diseño "Websites Increíbles v5" · Framer Motion integrado |
-| **Cirugía Estética IA** | Skills de calificación de leads + RAG sobre casos clínicos |
-| **Academy** | Estructura de onboarding en fases + drip content automatizado |
+> La capa de construcción opera **dentro** de un producto.
+> El Agent OS opera **entre** productos.
+> Cuando hay conflicto de definición, la capa de construcción es herramienta de ejecución;
+> el Agent OS es fuente de verdad del ecosistema.
 
 ---
 
 ### El patrón de extracción (cómo un proyecto se vuelve skill reusable)
 
+Cada proyecto que se termina deja algo al siguiente. No en forma de copy-paste, sino como un skill documentado que cualquier proyecto futuro puede heredar sin reconstruir desde cero.
+
 ```
 Proyecto terminado
     ↓
-Identificar el núcleo reusable (≠ lo que es específico del nicho)
+Identificar el núcleo reusable (≠ lo específico del nicho)
     ↓
 Extraer a SKILL.md: Rol + Restricciones + Proceso + Ejemplo de output
     ↓
 Versionar en skills/ como unidad independiente
     ↓
-Siguiente proyecto hereda el skill sin reconstruir desde cero
+Siguiente proyecto hereda el skill en horas, no en semanas
 ```
 
-Ejemplo real: el motor de cold email de Prospecta tomó 3 semanas construirlo.
-Extraído como `pack-cold-email`, el siguiente proyecto lo integra en 1 hora.
+**Ejemplos del tipo de patterns que se extraen:**
+- Un funnel de infoproducto → skill de email nurturing post-compra
+- Una app con modelo freemium → skill de conversión free-to-paid
+- Un canal de contenido → pipeline de producción reproducible
+- Una herramienta de outreach B2B → skill de correo en frío con compliance
+
+Los detalles de implementación son propios de cada proyecto.
+Lo que se comparte es el **patrón**: qué estructura tiene, qué problema resuelve, qué restricciones respeta.
+
 **Este es el compounding del sistema — cada proyecto deja al siguiente más inteligente.**
 
 ---
