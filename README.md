@@ -172,7 +172,7 @@ Los skills son archivos `SKILL.md` que definen el rol, restricciones, proceso y 
 |-------|---------|
 | `latam-market-research` | Investigación de mercado especializada en LATAM |
 | `market-validation-engine` | Motor de validación de demanda antes de construir |
-| `inteligencia-nicho-maternidad` | Ejemplo de inteligencia de nicho (adaptable a cualquier nicho) |
+| `inteligencia-de-nicho` | Avatar, vocabulario y reglas de tono — plantilla genérica adaptable a cualquier nicho |
 | `analytics-dashboard` | Sistema de métricas: North Star, funnels, alertas automáticas |
 
 ### 💰 Monetización y Producto
@@ -312,7 +312,7 @@ SaaS Factory V5 (el agente que construye y mejora)
 Para conectar con la comunidad:
 - Comparte tu fork en la comunidad de SaaS Factory (saas-factory-setup)
 - Contribuye nuevos skills con el formato `SKILL.md`
-- Adapta el skill `inteligencia-nicho-maternidad` a tu nicho y compártelo
+- Adapta el skill `inteligencia-de-nicho` a tu nicho y compártelo
 
 ### Fuentes e Inspiración
 

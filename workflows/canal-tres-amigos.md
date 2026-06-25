@@ -1,15 +1,16 @@
 ---
 description: >-
   Plantilla de workflow para canal de YouTube de contenido animado/educativo
-  producido con IA a costo $0. Ilustrado con el caso real de un canal de
-  animación para bebés. Adapta los personajes, nicho y reglas al tuyo.
+  producido con IA a costo $0. Define una vez los personajes y el estilo;
+  la fábrica produce episodios de forma semiautomática. Adapta el nicho y
+  las reglas al tuyo.
 ---
 
 # Workflow: Canal de Contenido Animado con IA
-## (Plantilla — ejemplo: canal educativo para bebés)
+## (Plantilla — ejemplo: canal educativo con personajes animados)
 
 > **Este workflow enseña el MÉTODO**, no la implementación específica de ningún canal real.
-> El ejemplo es un canal de animación para bebés 0-6m producido a $0 con herramientas en nube.
+> El ejemplo es un canal educativo con personajes animados producido a $0 con herramientas en nube.
 > Adapta los personajes, el nicho, las reglas de contenido y los destinos a tu caso.
 
 ---
@@ -62,11 +63,11 @@ REGLAS:     [qué no puede aparecer en tu canal — por plataforma, nicho, edad 
 FORMATOS:   [duración estándar, ratio, idioma]
 ```
 
-**Ejemplo (canal para bebés):**
+**Ejemplo (canal educativo con personajes animados):**
 ```
-Personajes: 3 personajes con identidades por etapa de desarrollo (0-2m, 2-3m, 3m+)
+Personajes: 3 personajes con identidades diferenciadas por rol o temática
 Estilo: bloques 2D programáticos (Motion Canvas/Remotion) + clips generados con IA
-Reglas: sin flashes, ritmo lento, paleta suave, cumplimiento de plataforma
+Reglas: ritmo adaptado a la audiencia, paleta de colores definida, cumplimiento de plataforma
 Formatos: episodio 5-8 min + versión extendida 30-60 min
 ```
 
