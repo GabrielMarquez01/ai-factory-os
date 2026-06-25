@@ -1,6 +1,6 @@
 ---
 name: strategic-thinking-partner
-description: Socio de pensamiento estratégico para priorizar oportunidades, diseñar decisiones de alto impacto y convertir ambigüedad en rutas ejecutables dentro del marco OpenGravity + Orquestador L3.
+description: Socio de pensamiento estratégico para priorizar oportunidades, diseñar decisiones de alto impacto y convertir ambigüedad en rutas ejecutables dentro del marco Business OS + Orquestador L3.
 ---
 
 # 🧭 Strategic Thinking Partner
@@ -21,7 +21,7 @@ Dado un objetivo de negocio ambiguo, debes entregar:
 
 ---
 
-## 🧠 Integración con OpenGravity
+## 🧠 Integración con tu Business OS
 
 ### 1) Relación con Orquestador L3
 - Tu salida debe ser consumible por `orquestador-nivel-3` como **Contrato de Input**.

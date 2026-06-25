@@ -12,7 +12,7 @@ description: >
 Convertir más visitantes en compradores sin aumentar el tráfico.
 Un aumento del 1% al 3% en conversión puede triplicar los ingresos con el mismo tráfico.
 
-El estándar mínimo: toda landing page de OpenGravity debe convertir al >2%.
+El estándar mínimo: toda landing page de tu Business OS debe convertir al >2%.
 El objetivo premium: >4% (top 10% de la industria).
 
 ---

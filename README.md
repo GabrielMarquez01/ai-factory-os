@@ -402,7 +402,9 @@ git commit -m "feat: mi business OS — adaptado para [tu nicho]"
 
 | Producto | URL | Estado |
 |---------|-----|--------|
-| Agente Sofía (ventas 24/7) | primerasmiradas.com | ✅ Producción |
+| Agente de ventas y soporte 24/7 (RAG + escalación humana) | dominio propio | ✅ Producción |
+| App móvil con tracker y notificaciones push | dominio propio | ✅ Producción |
+| Motor de email nurturing D+0/D+3/D+7/D+14 | Resend + Supabase | ✅ Producción |
 
 ---
 

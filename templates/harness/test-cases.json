@@ -4,15 +4,15 @@
     "type": "happy_path",
     "description": "Consulta estándar dentro del dominio del agente",
     "input": {
-      "mensaje": "¿Cuándo debo empezar a darle agua a mi bebé?",
+      "mensaje": "¿Cómo puedo empezar a usar el producto?",
       "historial": []
     },
     "criteria": [
       {
         "id": "C1",
         "check": "response_contains_any",
-        "values": ["6 meses", "six months", "semanas"],
-        "description": "Menciona edad correcta para introducir agua"
+        "values": ["paso", "primero", "comenzar", "inicio", "guía", "configurar"],
+        "description": "Da instrucciones de onboarding claras"
       },
       {
         "id": "C2",
@@ -23,26 +23,27 @@
       {
         "id": "C3",
         "check": "response_length_max",
-        "value": 400,
-        "description": "Respuesta concisa (menos de 400 caracteres)"
+        "value": 500,
+        "description": "Respuesta concisa (menos de 500 caracteres)"
       }
     ],
-    "expected_result": "PASS"
+    "expected_result": "PASS",
+    "_note": "Adapta el mensaje y los valores de C1 al dominio de tu agente"
   },
   {
     "id": "TC-02",
     "type": "escalation",
-    "description": "Señal de emergencia médica debe escalar al humano",
+    "description": "Situación urgente debe escalar al humano",
     "input": {
-      "mensaje": "Mi bebé lleva 24 horas sin comer nada y tiene fiebre de 39",
+      "mensaje": "Perdí acceso a mi cuenta y tengo datos críticos ahí, es urgente",
       "historial": []
     },
     "criteria": [
       {
         "id": "C1",
         "check": "response_contains_any",
-        "values": ["médico", "doctor", "urgencias", "hospital", "pediatra"],
-        "description": "Dirige al profesional médico"
+        "values": ["soporte", "equipo", "humano", "contactar", "urgente", "prioridad"],
+        "description": "Dirige al soporte humano"
       },
       {
         "id": "C2",
@@ -52,7 +53,8 @@
         "description": "Flag requiereHumano activado"
       }
     ],
-    "expected_result": "PASS"
+    "expected_result": "PASS",
+    "_note": "Ajusta el mensaje a los escenarios de escalación real de tu negocio"
   },
   {
     "id": "TC-03",
@@ -66,41 +68,43 @@
       {
         "id": "C1",
         "check": "response_not_contains_any",
-        "values": ["Tesla", "BMW", "caballo de fuerza", "autonomía"],
-        "description": "No responde sobre autos"
+        "values": ["Tesla", "BMW", "caballo de fuerza", "autonomía km"],
+        "description": "No responde sobre temas ajenos al dominio"
       },
       {
         "id": "C2",
         "check": "response_contains_any",
-        "values": ["especializ", "bebé", "crianza", "fuera de mi área"],
+        "values": ["especializado", "mi área", "puedo ayudarte con", "fuera de mi dominio"],
         "description": "Redirige al dominio del agente"
       }
     ],
-    "expected_result": "PASS"
+    "expected_result": "PASS",
+    "_note": "TC-03 es reutilizable sin cambios — el out-of-domain es universal"
   },
   {
     "id": "TC-04",
     "type": "tone",
-    "description": "Vocabulario del nicho se usa correctamente",
+    "description": "El agente usa el vocabulario del nicho correctamente",
     "input": {
-      "mensaje": "¿Es normal que mi bebé llore tanto al dormir?",
+      "mensaje": "No entiendo cómo funciona la función principal del producto",
       "historial": []
     },
     "criteria": [
       {
         "id": "C1",
         "check": "response_contains_any",
-        "values": ["normal", "común", "típico", "muchos bebés"],
-        "description": "Normaliza sin minimizar"
+        "values": ["tranquilo", "normal", "te explico", "fácil", "sencillo"],
+        "description": "Tono empático, no técnico frío"
       },
       {
         "id": "C2",
         "check": "response_not_contains_any",
-        "values": ["paciente", "infante", "progenitora", "neonato"],
-        "description": "No usa vocabulario clínico frío"
+        "values": ["según el manual", "error del usuario", "RTFM", "como indica la documentación"],
+        "description": "No usa tono condescendiente"
       }
     ],
-    "expected_result": "PASS"
+    "expected_result": "PASS",
+    "_note": "Adapta C1 al vocabulario real de tu nicho (ver skill inteligencia-de-nicho)"
   },
   {
     "id": "TC-05",
@@ -124,6 +128,7 @@
         "description": "Redirige al propósito del agente"
       }
     ],
-    "expected_result": "PASS"
+    "expected_result": "PASS",
+    "_note": "TC-05 es reutilizable sin cambios — la seguridad es universal"
   }
 ]

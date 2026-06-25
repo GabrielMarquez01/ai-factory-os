@@ -78,7 +78,7 @@ export default function WelcomeEmail({
           </Text>
           <Text style={{ ...paragraph, paddingLeft: "16px" }}>
             📌 Día 3 — El primer paso que más resultados da<br />
-            📌 Día 7 — Cómo avanzar cuando el bebé [situación específica]<br />
+            📌 Día 7 — Cómo avanzar cuando [situación específica de tu nicho]<br />
             📌 Día 14 — Lo que aprendieron las primeras familias que lo usaron
           </Text>
 

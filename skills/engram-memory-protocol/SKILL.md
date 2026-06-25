@@ -27,8 +27,8 @@ Obligatorio antes de despedirse (`notify_user`) si se han realizado cambios sign
 - **Contenido:** Objetivo, descubrimientos, tareas completadas, próximos pasos y archivos relevantes.
 
 ## 📂 Estructura de Almacenamiento
-- **Local:** `c:/Users/Gabriel/.antigravity/OpenGravity/engram/`
-- **Cloud:** Páginas de Notion mediante MCP.
+- **Local:** `.business-os/engram/` (raíz del repo de tu Business OS)
+- **Cloud:** Páginas de Notion mediante MCP (opcional).
 
 ## 🛠️ Reglas de Oro
 1. **Inmediatez:** Guarda el Engram justo después del evento, no esperes al final.
@@ -40,7 +40,7 @@ Obligatorio antes de despedirse (`notify_user`) si se han realizado cambios sign
 El ecosistema vive en VARIOS repos (uno por producto, más el repo central del Business OS), pero la memoria central vive en el Engram del repo principal. **Trabajo hecho en un repo secundario que no vuelca su resumen al Engram central = trabajo invisible = fuga de memoria** (ejemplo: un producto desplegado en producción sin que ninguna sesión del Business OS lo supiera).
 
 1. Toda sesión sobre un repo secundario cierra empujando su What/Why/Where/Learned al Engram central (cada engram de proyecto tiene su "protocolo anti-fuga" con el prompt listo).
-2. Si esa sesión no tiene acceso a OpenGravity: el humano pega el resumen en una sesión de OpenGravity y esta lo registra.
+2. Si esa sesión no tiene acceso al repo principal: el humano pega el resumen en una sesión del Business OS y esta lo registra.
 3. Al INICIAR sesión aquí: si un engram de proyecto externo tiene >7 días sin actualizar y el proyecto está activo, preguntar al humano si hubo avances no registrados.
 
 ## 🔁 Aprendizaje Continuo (patrón → skill)

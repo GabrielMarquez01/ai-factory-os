@@ -430,7 +430,7 @@ Para el funnel necesito confirmar:
 4. ¿Ofreces garantía? (recomendado: 30 días sin preguntas)
 ```
 
-### El Funnel Completo OpenGravity:
+### El Funnel Completo tu Business OS:
 ```
 TRÁFICO (SEO orgánico, Twitter, Reddit, LinkedIn, referidos)
         ↓
@@ -552,7 +552,7 @@ marketing-kit/
 
 1. **`/validacion-visual`** — Playwright abre la app como usuario real; prueba todos los flujos de punta a punta (landing → capture → checkout → thank you). No avanzar si hay bugs de UI visibles.
 
-2. **`/auditoria-profunda`** — Verifica que la config del usuario se aplique, que los datos persistan (no solo en caché), y que los permisos no filtren entre usuarios. En el stack OpenGravity: confirmar que RTDB no esté en fallback a memoria.
+2. **`/auditoria-profunda`** — Verifica que la config del usuario se aplique, que los datos persistan (no solo en caché), y que los permisos no filtren entre usuarios. En el stack tu Business OS: confirmar que RTDB no esté en fallback a memoria.
 
 3. **`/auditoria-de-seguridad`** — Caza secretos expuestos, reglas de RTDB débiles, IDOR, headers faltantes, XSS, inyección de prompts. **Un hallazgo Crítico aquí detiene el flujo completo.**
 
@@ -593,7 +593,7 @@ responde en la URL de producción. No declara éxito por "deploy verde"
 Caminos soportados:
   - Firebase Hosting + Functions → firebase deploy
   - Cloud Run → gcloud run deploy
-  - PM2 / VPS → pm2 restart opengravity
+  - PM2 / VPS → pm2 restart mi-business-os
 
 Si el deploy converge en error, el skill diagnostica la causa raíz
 (variables de entorno, imports ESM sin .js, RTDB en fallback, timeout)

@@ -1,6 +1,6 @@
 ---
 name: karpathy-protocol
-description: Aplica los 4 principios de Karpathy para auditar o corregir el comportamiento de cualquier skill, workflow o pipeline de OpenGravity antes de ejecutarlo. Úsalo cuando el agente esté a punto de sobrecomplicar, asumir, o actuar sin criterio de éxito.
+description: Aplica los 4 principios de Karpathy para auditar o corregir el comportamiento de cualquier skill, workflow o pipeline de tu Business OS antes de ejecutarlo. Úsalo cuando el agente esté a punto de sobrecomplicar, asumir, o actuar sin criterio de éxito.
 ---
 
 # Karpathy Protocol Skill

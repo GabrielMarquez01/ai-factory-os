@@ -1,6 +1,6 @@
 ---
 name: agent-architect
-description: Arquitecto de agentes especializado en el diseño, configuración y despliegue de agentes autónomos utilizando el skill `create-agent` de OpenRouter. Define la personalidad (prompting), herramientas (tools) y memoria de los agentes para convertirlos en "Empleados IA" productivos dentro de la infraestructura de OpenGravity.
+description: Arquitecto de agentes especializado en el diseño, configuración y despliegue de agentes autónomos utilizando el skill `create-agent` de OpenRouter. Define la personalidad (prompting), herramientas (tools) y memoria de los agentes para convertirlos en "Empleados IA" productivos dentro de la infraestructura de tu Business OS.
 ---
 
 # Agent Architect Skill 🤖📐
@@ -47,7 +47,7 @@ El Arquitecto utiliza el skill agéntico para registrar la nueva identidad:
 ```
 
 **2.2 — Selección de herramientas (Tools)**
-Definir a qué capacidades del ecosistema OpenGravity tendrá acceso el agente:
+Definir a qué capacidades del ecosistema tendrá acceso el agente:
 - **Notion**: Para registro de leads.
 - **n8n Webhooks**: Para disparar automatizaciones.
 - **Stripe/Gumroad**: Para verificar pagos.
@@ -71,4 +71,4 @@ Cuando este skill se invoca, debe producir:
 3. **Instrucciones de Uso** — Cómo interactuar con el nuevo "Empleado IA".
 
 ---
-*Hecho por la División de Arquitectura de OpenGravity.*
+*Hecho por la División de Arquitectura de tu Business OS.*

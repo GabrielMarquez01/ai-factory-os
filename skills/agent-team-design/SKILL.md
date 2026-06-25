@@ -188,7 +188,7 @@ const MENSAJE_AGENTE = {
   payload: {
     contenido: "El texto generado...",
     criterios: ["tono_correcto", "sin_palabras_prohibidas", "longitud_correcta"],
-    contexto: { avatar: "mamás 0-6m", canal: "instagram" }
+    contexto: { avatar: "tu avatar del nicho", canal: "instagram" }
   },
   
   // Metadata
