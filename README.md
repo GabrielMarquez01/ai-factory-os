@@ -153,7 +153,10 @@ Prueba el chat de Sofia ahora mismo — responde en menos de 2 segundos con voca
 ## Metodologías Aplicadas
 
 Más allá del stack técnico, el sistema funciona por los **principios de pensamiento** que lo gobiernan.
-Estas metodologías son independientes del nicho y aplicables a cualquier negocio.
+Estas metodologías son independientes del nicho — están diseñadas para adaptarse a cualquier negocio,
+igual que un framework genérico se personaliza para cada producto.
+
+Ver carpeta `/skills/` para los archivos SKILL.md de cada metodología.
 
 ---
 
@@ -248,7 +251,109 @@ Ver [`docs/como-adaptar.md`](docs/como-adaptar.md) para el proceso paso a paso.
 
 ---
 
-### 5. Socio Estratégico — el agente que piensa desde múltiples ángulos
+### 5. Orquestador Nivel 3 — coordina agentes, no ejecuta tareas
+
+El anti-patrón más común en sistemas multi-agente: un agente que intenta hacer todo solo.
+
+El Orquestador Nivel 3 resuelve esto con una regla simple:
+
+```
+El orquestador NUNCA ejecuta trabajo de producción.
+Su único trabajo es coordinar quién hace qué y en qué orden.
+```
+
+La implementación es un DAG (Directed Acyclic Graph):
+
+```
+Objetivo recibido
+    ↓
+1. Leer memoria (Engram) — ¿qué sabemos ya de este problema?
+2. Mapear el DAG — qué fases, qué agentes, qué dependencias
+3. Despachar sub-agentes con "Contratos de Input"
+4. Recibir "Contratos de Resultado" de cada agente
+5. Gate humano si el paso es crítico (gasto, deploy, cambio de BD)
+6. Registrar aprendizajes en Engram antes de cerrar la sesión
+```
+
+**La diferencia con un simple "agente que delega":**
+- Cada sub-agente recibe un contrato explícito (input definido + criterio de aceptación)
+- Las fases paralelas corren simultáneamente (no en serie innecesariamente)
+- El orquestador evalúa el output contra los criterios ANTES de pasar a la siguiente fase
+
+Esto permite que un founder solo pueda operar 5 pilares: cada flujo de trabajo tiene
+su propio orquestador que coordina los skills especializados necesarios.
+
+Ver: [`skills/orquestador-nivel-3/SKILL.md`](skills/orquestador-nivel-3/SKILL.md)
+
+---
+
+### 6. Catalizador de Tareas — el router de herramientas e IA
+
+Este es el componente que hace que el sistema sea eficiente a escala:
+en lugar de usar el mismo modelo para todo, **cada tarea se enruta al modelo y herramienta óptimos**.
+
+```
+Tarea recibida → Clasificación de intención → Modelo/herramienta óptima
+```
+
+Los 6 arquetipos de tarea y su ejecutor óptimo:
+
+| Arquetipo | Tipo de trabajo | Ejecutor óptimo |
+|-----------|----------------|-----------------|
+| `TECHNICAL` | Código, integraciones, bugs | Modelo de inferencia rápida (Groq/local) |
+| `CREATIVE` | Copy, guiones, conceptos | Modelo creativo (Claude/Gemini) |
+| `STRATEGIC` | Análisis, decisiones complejas | Modelo de razonamiento profundo (Claude Opus) |
+| `RESEARCH` | Investigación, keywords, competencia | Modelo con acceso web (Perplexity) |
+| `FAST` | Clasificaciones simples, sí/no | Modelo ligero y ultra-rápido |
+| `MULTIMEDIA` | Storyboards, prompts visuales | Modelo multimodal |
+
+**La regla de oro del catalizador:**
+> Nunca uses un modelo de 70B para lo que resuelve un 8B.
+> El costo-IA por usuario importa desde el día uno.
+
+Si el modelo primario falla, hay una cadena de fallback automática.
+Si un routing produce resultados excepcionales, el patrón se guarda en Engram para reutilizarlo.
+
+**Para adaptar a tu negocio:**
+- Define tus arquetipos de tarea (¿qué tipos de trabajo hace tu sistema?)
+- Mapea cada arquetipo al proveedor más barato que da calidad suficiente
+- Documenta la cadena de fallback
+- Mide costo por tarea y optimiza con datos reales
+
+Ver: [`skills/catalizador-tareas/SKILL.md`](skills/catalizador-tareas/SKILL.md)
+
+---
+
+### 7. Modelo de Autonomía L0/L1/L2 — graduar la confianza en el agente
+
+No todos los agentes deben tener el mismo nivel de autonomía. El sistema define tres niveles:
+
+```
+L0 — Borrador
+    El agente propone, el humano revisa CADA paso antes de ejecutar.
+    Agentes nuevos, tareas de alto riesgo.
+
+L1 — Piloto
+    El agente ejecuta por corrida completa; el humano aprueba antes de publicar.
+    Agentes con historial, tareas de riesgo medio.
+
+L2 — Certificado
+    El agente corre solo y solo informa. El humano interviene si hay anomalía.
+    Agentes probados en producción, tareas repetitivas de bajo riesgo.
+```
+
+La certificación de L1 a L2 no es arbitraria — requiere criterios explícitos:
+¿cuántas conversaciones exitosas? ¿qué porcentaje de outputs aprobados sin editar?
+
+Los **circuit breakers** son condiciones que revierten cualquier agente a L0 sin importar su nivel:
+- Claims médicos o legales
+- Gasto no autorizado
+- Información de terceros
+- Error repetido N+ veces
+
+---
+
+### 8. Socio Estratégico — el agente que piensa desde múltiples ángulos
 
 Esta es quizás la metodología menos documentada pero la más valiosa operativamente.
 
@@ -296,6 +401,28 @@ Ejemplo del skill market-validation-engine:
 ```
 
 El socio estratégico no es un agente separado — es una **capa de razonamiento** que se activa antes de ejecutar. Es lo que diferencia un sistema que hace lo que le dices de uno que te ayuda a pensar si lo que le dices es correcto.
+
+El output del Strategic Thinking Partner siempre termina en un **brief listo para el Orquestador Nivel 3**: las opciones analizadas, la opción elegida y el DAG de fases para ejecutarla. Estrategia → ejecución sin fricción.
+
+Ver: [`skills/strategic-thinking-partner/SKILL.md`](skills/strategic-thinking-partner/SKILL.md)
+
+---
+
+### Resumen: las 8 metodologías del sistema
+
+| # | Metodología | Qué resuelve |
+|---|-------------|--------------|
+| 1 | **Protocolo Karpathy** | El agente aprende de sus propios errores. Mismo error: nunca dos veces. |
+| 2 | **Gates Humanos** | El humano decide QUÉ. El agente ejecuta CÓMO. Nunca al revés. |
+| 3 | **Engram** | El conocimiento vive en git, no en la cabeza de nadie ni en un chat. |
+| 4 | **Harness Universal** | Estructura invariante adaptable a cualquier nicho. |
+| 5 | **Orquestador Nivel 3** | Coordina agentes con contratos y DAGs. No ejecuta, dirige. |
+| 6 | **Catalizador de Tareas** | Cada tarea al modelo/herramienta óptima. Costo-IA por diseño. |
+| 7 | **Modelo L0/L1/L2** | La autonomía del agente se gradúa con evidencia, no con fe. |
+| 8 | **Socio Estratégico** | Análisis multi-perspectiva antes de ejecutar. Evita ejecutar bien las instrucciones equivocadas. |
+
+Estas metodologías son **independientes del stack**. Funcionan con Claude Code, Cursor,
+cualquier LLM, y en cualquier nicho de negocio. El contenido cambia; la estructura permanece.
 
 ---
 
