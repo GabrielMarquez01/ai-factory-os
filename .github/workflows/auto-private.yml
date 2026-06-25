@@ -1,0 +1,40 @@
+name: Auto-Private Repo
+
+on:
+  schedule:
+    # Julio 3, 2026 a las 18:00 UTC (12pm CDT / 1pm Ciudad de México)
+    - cron: '0 18 3 7 *'
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Escribe CONFIRMAR para hacer el repo privado manualmente'
+        required: true
+
+permissions:
+  administration: write
+
+jobs:
+  make-private:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar input manual (si aplica)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "CONFIRMAR" ]; then
+            echo "❌ Input incorrecto. Escribe exactamente: CONFIRMAR"
+            exit 1
+          fi
+
+      - name: Hacer el repositorio privado
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.rest.repos.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              private: true
+            })
+            console.log('✅ Repositorio ahora es PRIVADO.')
+            console.log('Repo: ' + context.repo.owner + '/' + context.repo.repo)
+            console.log('Fecha: ' + new Date().toISOString())
