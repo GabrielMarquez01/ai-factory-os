@@ -68,6 +68,26 @@ Usuario dice algo
 
 ---
 
+## Principio Rector — Gasto Autofinanciado xN
+
+> **Cada peso/dólar gastado debe traer al menos 3x de retorno. Si no, no se hace.**
+
+```
+ANTES de cualquier gasto, pregunta:
+  1. ¿Tiene tier gratuito suficiente para validar? → Usar gratis primero
+  2. ¿El primer cliente/venta cubre el costo? → Proceder
+  3. ¿Retorno ≥ 3x? → Verde | ¿Retorno < 3x? → Buscar alternativa más barata
+  4. ¿Costo fijo sin ingresos garantizados? → Evitar hasta tener tracción
+
+Ejemplo correcto: $5/mes infraestructura → genera $15+ en ventas → escalar
+Ejemplo incorrecto: $50/mes en modelo premium → sin usuarios aún → esperar
+```
+
+Aplicar a: modelos de IA, infraestructura, herramientas, APIs, publicidad.
+El stack correcto usa gratis hasta el límite, pago solo cuando el ingreso ya existe.
+
+---
+
 ## Reglas de Operación
 
 ### 1. Gate humano obligatorio para:
