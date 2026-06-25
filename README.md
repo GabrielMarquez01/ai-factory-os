@@ -4,7 +4,7 @@
 >
 > Este repositorio es un **Business OS listo para clonar y personalizar** — no un producto, sino el MÉTODO de operación que permite a una sola persona manejar múltiples líneas de negocio usando agentes de IA especializados.
 >
-> Los datos sensibles y estrategia propietaria no están incluidos. Sí están los patrones, las arquitecturas, y el razonamiento detrás de cada decisión — para que lo adaptes a tu propio contexto.
+> Incluye 38 skills documentados, 8 workflows DAG, código funcional en `templates/`, y un harness de evaluación que funciona con cualquier IA — Claude, GPT, Gemini, Groq, Llama u Ollama.
 
 ---
 
@@ -218,6 +218,49 @@ Los skills son archivos `SKILL.md` que definen el rol, restricciones, proceso y 
 
 ---
 
+## 📦 Código Funcional (`templates/`)
+
+Además de la documentación, el repo incluye código real listo para copiar a tu proyecto:
+
+```
+templates/
+├── supabase/
+│   └── schema.sql          ← Base de datos completa: perfiles, eventos, RAG, email queue, afiliados
+├── api/
+│   ├── chat/route.ts       ← Endpoint de chat con RAG (Groq + Supabase pgvector)
+│   ├── track/route.ts      ← Analytics de eventos (POST /api/track)
+│   ├── webhooks/payment/   ← Webhook Polar/Stripe → activa nurturing automático
+│   └── unsubscribe/route.ts ← Unsubscribe seguro con tokens HMAC (CAN-SPAM / LFPDPPP)
+├── email/
+│   ├── welcome.tsx         ← Email de bienvenida (React Email)
+│   └── nurturing-d3.tsx    ← Email D+3 post-compra
+└── harness/
+    ├── test-cases.json     ← 5 casos de prueba de ejemplo (happy path, escalada, tono, seguridad)
+    ├── run-harness.js      ← Runner AI-agnóstico (Groq, OpenAI, Claude, Gemini, Ollama)
+    └── README.md           ← Guía completa del harness
+```
+
+### El Harness funciona con cualquier IA
+
+```bash
+# Sin costo — Ollama local
+node templates/harness/run-harness.js --provider ollama --model llama3.2
+
+# Groq (rápido y económico)
+GROQ_API_KEY=gsk_... node templates/harness/run-harness.js --provider groq
+
+# Claude
+ANTHROPIC_API_KEY=sk-... node templates/harness/run-harness.js --provider anthropic
+
+# OpenAI
+OPENAI_API_KEY=sk-... node templates/harness/run-harness.js --provider openai --model gpt-4o-mini
+
+# Tu propia API local
+node templates/harness/run-harness.js  # apunta a http://localhost:3000/api/chat por default
+```
+
+---
+
 ## 🔗 Integración con el Ecosistema
 
 Este Business OS está diseñado para integrarse con herramientas del ecosistema de IA para fundadores:
@@ -421,8 +464,7 @@ Siguiente proyecto hereda el patrón en horas, no semanas
 
 **No incluido:**
 - Credenciales, API keys o tokens de ningún tipo
-- Datos de clientes o leads reales
-- Estrategia comercial propietaria no generalizable
+- Datos de usuarios reales
 
 ```bash
 # Fork → crea tu rama → documenta → PR

@@ -138,14 +138,39 @@ Basado en el trabajo de Andrej Karpathy (ex-Tesla AI, ex-OpenAI) sobre evaluaci�
 
 La clave: mutaciones pequeñas, evaluación objetiva, decisión basada en datos.
 
+## Runner AI-Agnóstico (código real)
+
+El repositorio incluye un runner funcional en `templates/harness/` que funciona con cualquier IA:
+
+```bash
+# Ollama local — sin costo
+node templates/harness/run-harness.js --provider ollama
+
+# Groq
+GROQ_API_KEY=gsk_... node templates/harness/run-harness.js --provider groq
+
+# Claude / Anthropic
+ANTHROPIC_API_KEY=sk-... node templates/harness/run-harness.js --provider anthropic
+
+# OpenAI
+OPENAI_API_KEY=sk-... node templates/harness/run-harness.js --provider openai
+
+# Tu propia API (default)
+node templates/harness/run-harness.js
+```
+
+Puedes cambiar de modelo sin modificar los casos de prueba — los criterios son independientes del proveedor.
+
 ## Herramientas
 
 | Herramienta | Uso | Link |
 |-------------|-----|------|
 | **Groq** | Evaluador LLM rápido y económico | groq.com |
+| **Ollama** | Modelos locales — sin costo, sin API key | ollama.com |
 | **OpenRouter** | Comparar evaluadores con múltiples modelos | openrouter.ai |
 | **Playwright** | Harness para interfaces web | playwright.dev |
 | **Vitest** | Harness para lógica de código | vitest.dev |
+| **Promptfoo** | Framework de evaluación de LLMs (multi-modelo) | promptfoo.dev |
 | **Supabase** | Almacenar historial de evaluaciones | supabase.com |
 
 ## Recursos de la Comunidad
