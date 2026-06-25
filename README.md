@@ -2,10 +2,9 @@
 
 > **"Construido por un fundador independiente. Documentado para la comunidad."**
 >
-> Este repositorio es un **Business OS listo para clonar y personalizar** — no un producto, sino el MÉTODO de operación que permite a una sola persona manejar 5 líneas de negocio simultáneamente usando agentes de IA.
+> Este repositorio es un **Business OS listo para clonar y personalizar** — no un producto, sino el MÉTODO de operación que permite a una sola persona manejar múltiples líneas de negocio usando agentes de IA especializados.
 >
-> Está pensado para que lo estudies, lo adaptes, y lo apliques a tu propio negocio.
-> Los datos sensibles y estrategia comercial propietaria no están incluidos — sí están los patrones, las arquitecturas, y el razonamiento detrás de cada decisión.
+> Los datos sensibles y estrategia propietaria no están incluidos. Sí están los patrones, las arquitecturas, y el razonamiento detrás de cada decisión — para que lo adaptes a tu propio contexto.
 
 ---
 
@@ -34,30 +33,29 @@ Sin Business OS:          Con Business OS:
 
 ## El Problema Que Esto Resuelve
 
-Empecé un negocio con múltiples líneas activas al mismo tiempo:
+Este sistema nació de operar 5 líneas de negocio activas con 1 persona:
 
-| Pilar | Canal | Carga manual |
-|-------|-------|-------------|
-| Infoproducto (ebook) | Landing + Stripe | Responder DMs, cerrar preventa 1:1 |
+| Pilar | Canal | Carga manual sin sistema |
+|-------|-------|--------------------------|
+| Infoproducto | Landing + pasarela de pagos | Responder DMs, cerrar preventa 1:1 |
 | YouTube (2 canales) | Educativo + Animación | Guiones, edición, subtítulos, subida |
 | E-commerce | Productos físicos con proveedor | Fotos, copy, mockups, inventario |
 | App móvil | Next.js + Supabase | Dev + soporte + notificaciones |
 | Merch 3D | Ropa física con marca | Diseño, proveedor, fulfillment |
 
-**El resultado sin sistema:** 20–30 horas/semana de operación manual. Insostenible para 1 persona.
+**El resultado sin sistema:** 20–30 horas/semana de operación manual. Insostenible.
 
-**El insight que lo cambió todo:**
-> El cuello de botella no era el producto. Era el **sistema operativo del negocio**.
+**El insight:** el cuello de botella no era el producto. Era el **sistema operativo del negocio**.
 
 ---
 
 ## La Solución: Agentes Especializados + Workflows DAG
 
 ```
-OpenGravity (este patrón)
-├── skills/       ← 25 agentes especializados (cada uno = un experto en su área)
+Business OS
+├── skills/       ← 38 agentes especializados (cada uno = un experto en su área)
 ├── workflows/    ← 8 workflows DAG (cada uno = un proceso de negocio documentado)
-└── docs/         ← Documentación de contexto y referencia
+└── docs/         ← Documentación de referencia y contexto
 ```
 
 ### Los 5 Sistemas Que Reemplazaron las 30 Horas Semanales
@@ -65,21 +63,20 @@ OpenGravity (este patrón)
 **1. Agente de Ventas y Soporte 24/7**
 - Chat embebido en el sitio — sin WhatsApp, sin costos de Meta
 - Motor: Groq (velocidad) + modelo de razonamiento para casos complejos
-- Vocabulario del avatar encodeado como restricción técnica (no editorial)
+- Vocabulario del avatar encodado como restricción técnica (no editorial)
 - Gate freemium: consultas gratis → conversión a Pro
 - Ver skill: `agente-frontoffice`
 
 **2. Pipelines de Contenido — $0 de Infraestructura**
 - Canal educativo: guión → TTS → escenas HTML → FFmpeg → YouTube API
 - Canal de animación: personaje con identidad visual → pipeline CI/CD
-- Episodios producidos sin intervención manual después del setup inicial
-- Ver skills: `content-pipeline`, `creative-director`
-- Ver workflow: `contenido-multimedia-social`
+- Episodios producidos sin intervención manual después del setup
+- Ver skills: `video-pipeline-ai`, `content-pipeline`, `creative-director`
 
 **3. Email Nurturing Automático Post-Compra**
 - Se activa con cada compra (webhook Stripe/Polar → base de datos)
 - Secuencia D+3 / D+7 / D+14 con contenido de valor real
-- Tokens HMAC para unsubscribe seguro (cumplimiento CAN-SPAM / LFPDPPP)
+- Tokens HMAC para unsubscribe seguro (CAN-SPAM / LFPDPPP)
 - Ver skill: `email-nurturing-postcompra`
 
 **4. Engram — Memoria Persistente del Negocio**
@@ -89,7 +86,7 @@ OpenGravity (este patrón)
 - Ver skill: `engram-memory-protocol`
 
 **5. Producto Digital con Modelo Freemium**
-- Auth anónima ("días gratis sin registro")
+- Auth anónima ("N días gratis sin registro")
 - Seguimiento + predicciones por etapa
 - Modelo Founders: acceso vitalicio a precio de lanzamiento
 - Ver skills: `freemium-conversion`, `funnel-infoproducto`
@@ -99,27 +96,27 @@ OpenGravity (este patrón)
 ## Arquitectura del Sistema
 
 ```
-┌─────────────────────────────────────────────┐
-│                 FUNDADOR                    │
-│          (aprueba gates, no opera)          │
-└──────────────────┬──────────────────────────┘
-                   │
-       ┌───────────▼───────────┐
-       │      AGENTE CEO        │
-       │  (orquestador L3)     │
-       └──────┬────────────────┘
-              │
-   ┌──────────┼──────────────┐
-   ▼          ▼              ▼
-Skills     Workflows       Gates
-(25)        (8)           Humanos
-   │          │              │
-   ▼          ▼              ▼
-┌────────────────────────────────┐
-│           PRODUCCIÓN           │
-│   Sitio web · App · YouTube    │
-│   Email · E-commerce · Merch   │
-└────────────────────────────────┘
+┌───────────────────────────────────────────────┐
+│                   FUNDADOR                    │
+│           (aprueba gates, no opera)           │
+└─────────────────┬─────────────────────────────┘
+                  │
+      ┌───────────▼───────────┐
+      │     AGENTE CEO/       │
+      │   ORQUESTADOR L3      │
+      └──────┬────────────────┘
+             │
+  ┌──────────┼───────────────┐
+  ▼          ▼               ▼
+Skills     Workflows        Gates
+(38)         (8)           Humanos
+  │          │               │
+  ▼          ▼               ▼
+┌──────────────────────────────────┐
+│            PRODUCCIÓN            │
+│ Sitio web · App · YouTube        │
+│ Email · E-commerce · Comunidad   │
+└──────────────────────────────────┘
 ```
 
 **Modelo de autonomía:** cada agente tiene nivel L0/L1/L2 según su historial de confianza.
@@ -127,29 +124,31 @@ Ver skill `modelo-l0-l1-l2` para el sistema completo.
 
 ---
 
-## 📚 Skills Disponibles (25)
+## 📚 Skills Disponibles (38)
 
-Los skills son archivos SKILL.md que definen el rol, restricciones, proceso y ejemplos de un agente especializado. Están organizados en 6 áreas:
+Los skills son archivos `SKILL.md` que definen el rol, restricciones, proceso y ejemplos de un agente especializado, organizados en 7 áreas:
 
-### 🧠 Sistema Operativo del Agente
+### 🧠 Sistema Operativo del Agente (Agent OS)
 
 | Skill | Qué hace |
 |-------|---------|
-| `meta-agent-ceo` | Orquestador de nivel estratégico — coordina todos los demás agentes |
-| `orquestador-nivel-3` | Descompone objetivos complejos en DAGs ejecutables |
+| `meta-agent-ceo` | Orquestador estratégico — coordina todos los demás agentes |
+| `orquestador-nivel-3` | Descompone objetivos complejos en pasos ejecutables (DAG) |
 | `catalizador-tareas` | Convierte una tarea vaga en subtareas concretas y ejecutables |
 | `strategic-thinking-partner` | Socio estratégico para decisiones de negocio de alto impacto |
 | `agent-architect` | Diseña la arquitectura de nuevos agentes y sistemas |
+| `agent-team-design` | Cómo diseñar un equipo de agentes especializados que trabajan juntos |
+| `build-your-own-agent` | Guía paso a paso para construir tu propio agente desde cero |
 
 ### ⚙️ Operación y Confiabilidad
 
 | Skill | Qué hace |
 |-------|---------|
-| `engram-memory-protocol` | Memoria persistente entre sesiones — el cerebro institucional del negocio |
-| `karpathy-protocol` | Auditoría pre-ejecución basada en los principios de Andrej Karpathy |
-| `harness-universal` | Marco de evaluación para probar que cualquier agente funciona correctamente |
-| `human-gate-protocol` | El humano aprueba, el agente ejecuta — circuit breakers y formatos de gate |
-| `modelo-l0-l1-l2` | Sistema de certificación de autonomía gradual por historial de confianza |
+| `engram-memory-protocol` | Memoria persistente entre sesiones — el cerebro institucional |
+| `karpathy-protocol` | Auditoría pre-ejecución (principios de Andrej Karpathy) |
+| `harness-universal` | Marco de evaluación para probar que cualquier agente funciona |
+| `human-gate-protocol` | El humano aprueba, el agente ejecuta — circuit breakers y formatos |
+| `modelo-l0-l1-l2` | Certificación de autonomía gradual por historial de confianza |
 | `automation-engineer` | Diseña e implementa automatizaciones de procesos de negocio |
 
 ### 📢 Marketing y Distribución
@@ -159,10 +158,15 @@ Los skills son archivos SKILL.md que definen el rol, restricciones, proceso y ej
 | `marketing-digital` | Estrategia y ejecución de marketing en canales digitales |
 | `growth-hacking` | Experimentos de crecimiento acelerado con recursos mínimos |
 | `cro-optimizer` | Optimización de conversión en landing pages y funnels |
-| `email-sequence-ai` | Redacción de secuencias de email con IA ajustada al nicho |
-| `email-nurturing-postcompra` | Sistema D+3/D+7/D+14 de nurturing automático post-compra |
+| `landing-page-conversion` | Landing pages de alta conversión: AIDA, copy, A/B testing |
+| `seo-programatico` | SEO con IA: miles de páginas indexables generadas automáticamente |
+| `social-content-system` | Sistema 1→10: una pieza → todos los formatos y canales |
+| `email-sequence-ai` | Secuencias de email con IA ajustadas al nicho |
+| `email-nurturing-postcompra` | Secuencia automática D+3/D+7/D+14 post-compra |
+| `video-pipeline-ai` | TTS + escenas + FFmpeg + distribución a YouTube/Reels — $0 infra |
 | `content-pipeline` | Pipeline de producción de contenido — de guión a publicación |
 | `creative-director` | Dirección creativa de identidad visual y producción audiovisual |
+| `affiliate-program` | Sistema de afiliados: estructura, tracking, kit del afiliado |
 
 ### 🔍 Investigación y Validación
 
@@ -170,15 +174,26 @@ Los skills son archivos SKILL.md que definen el rol, restricciones, proceso y ej
 |-------|---------|
 | `latam-market-research` | Investigación de mercado especializada en LATAM |
 | `market-validation-engine` | Motor de validación de demanda antes de construir |
-| `inteligencia-nicho-maternidad` | Inteligencia de nicho aplicada a maternidad/crianza (adaptable a tu nicho) |
+| `inteligencia-nicho-maternidad` | Ejemplo de inteligencia de nicho (adaptable a cualquier nicho) |
+| `analytics-dashboard` | Sistema de métricas: North Star, funnels, alertas automáticas |
 
 ### 💰 Monetización y Producto
 
 | Skill | Qué hace |
 |-------|---------|
 | `funnel-infoproducto` | Sistema de preventa — vende antes de construir |
-| `freemium-conversion` | Sistema de conversión Free → Pro con modelo Founders |
-| `agente-frontoffice` | Agente de ventas y soporte 24/7 con RAG embebido en tu sitio |
+| `freemium-conversion` | Conversión Free → Pro con modelo Founders |
+| `agente-frontoffice` | Agente de ventas y soporte 24/7 con RAG embebido |
+| `pricing-strategy` | Framework de precios: valor percibido, modelo 3 planes, LatAm |
+| `ecommerce-operator` | Operar tienda: selección de producto, proveedor, fulfillment |
+
+### 👥 Escala y Comunidad
+
+| Skill | Qué hace |
+|-------|---------|
+| `customer-success` | Retención: onboarding, health score, anti-churn |
+| `team-os` | De 1 persona a equipo: cuándo contratar, cómo documentar para delegar |
+| `community-building` | Flywheel de comunidad: de usuarios a embajadores de marca |
 
 ### ⚖️ Legal y Cumplimiento
 
@@ -190,36 +205,88 @@ Los skills son archivos SKILL.md que definen el rol, restricciones, proceso y ej
 
 ## 🔄 Workflows (8)
 
-Los workflows son procesos de negocio documentados como DAGs (grafos de pasos con dependencias y gates explícitos):
-
 | Workflow | Qué automatiza |
 |---------|---------------|
 | `idea-a-producto-master` | Del concepto al producto lanzado — flujo completo |
 | `lanzamiento-producto` | Campaña de lanzamiento con gates de validación |
 | `marketing-completo` | Ciclo completo de marketing desde estrategia hasta métricas |
-| `contenido-multimedia-social` | Producción y publicación de contenido en múltiples canales |
-| `canal-tres-amigos` | Pipeline de producción de canal de animación (YouTube) |
+| `contenido-multimedia-social` | Producción y publicación de contenido multicanal |
+| `canal-tres-amigos` | Ejemplo: pipeline de producción de canal de animación (YouTube) |
 | `ecommerce-activacion-pmf` | Activación de tienda e-commerce hasta alcanzar PMF |
 | `reality-check-release-gate` | Gate de calidad antes de cualquier publicación o deploy |
 | `retroalimentacion-mejora` | Loop de aprendizaje: resultado real → mejora del sistema |
 
 ---
 
-## 📖 Documentación de Referencia
+## 🔗 Integración con el Ecosistema
 
-| Doc | Contenido |
-|-----|---------|
-| `como-adaptar.md` | Guía paso a paso para adaptar este sistema a cualquier negocio |
-| `estrategia-precios.md` | Framework de decisión de precios para productos digitales |
-| `glosario.md` | Definición de términos técnicos usados en los skills y workflows |
+Este Business OS está diseñado para integrarse con herramientas del ecosistema de IA para fundadores:
+
+### SaaS Factory V5 (Claude Code)
+
+[SaaS Factory V5](https://github.com/GabrielMarquez01/ai-factory-os) es el framework de construcción sobre el que opera este Business OS.
+
+```
+CÓMO SE COMPLEMENTAN:
+
+BUSINESS OS (este repo)           SAAS FACTORY V5
+Agentes de operación      ←→      Skills de construcción
+  agente-frontoffice                add-login
+  social-content-system             add-payments
+  video-pipeline-ai                 ai (RAG, chat, vision)
+  analytics-dashboard               supabase
+  customer-success                  playwright-cli
+
+El Business OS opera el negocio.
+SaaS Factory V5 construye y mejora el producto.
+Son complementarios — el Business OS usa los productos que SaaS Factory construye.
+```
+
+**Cómo integrar:**
+```bash
+# En tu proyecto Next.js construido con SaaS Factory V5,
+# agrega este Business OS como submódulo o referencia:
+git submodule add https://github.com/GabrielMarquez01/ai-factory-os .business-os
+
+# O clónalo por separado como contexto para Claude Code:
+# El agente puede leer los skills de ambos repositorios
+```
+
+### Business OS Template (Comunidad)
+
+Si llegaste aquí a través de Daniel o la comunidad de SaaS Factory — este repositorio es la implementación de referencia del patrón Business OS aplicado a un caso real.
+
+**La relación:**
+```
+Business OS Template (patrón genérico)
+    ↓ se instancia como
+Business OS de tu negocio (este repo = ejemplo real)
+    ↓ se opera con
+SaaS Factory V5 (el agente que construye y mejora)
+```
+
+Para conectar con la comunidad y ver otros casos de estudio:
+- Comparte tu fork en la comunidad de SaaS Factory
+- Contribuye nuevos skills con el formato `SKILL.md`
+- Adapta el skill `inteligencia-nicho-maternidad` a tu nicho y compártelo
+
+### everything-claude-code (ECC)
+
+Recurso de referencia de la comunidad Claude Code con patrones avanzados:
+
+```
+github.com/disler/everything-claude-code
+
+Este repo adopta el patrón "Continuous Learning" de ECC
+aplicado al contexto de operación de negocio:
+Cada skill mejora con el uso → el sistema se vuelve más inteligente con el tiempo
+```
 
 ---
 
 ## 🚀 Cómo Adaptar Este Sistema a Tu Negocio
 
-Este no es un template que se instala — es un **patrón de pensamiento** que se implementa.
-
-### Paso 1: Clona el repositorio como punto de partida
+### Paso 1: Clona como punto de partida
 
 ```bash
 git clone https://github.com/GabrielMarquez01/ai-factory-os.git mi-business-os
@@ -228,54 +295,27 @@ cd mi-business-os
 
 ### Paso 2: Mapea tus operaciones más costosas en tiempo
 
-Escríbelas con horas reales por semana. Eso es tu "cuello de botella" y el primer input de tu sistema.
-
 ```markdown
 # mis-operaciones.md
 
-| Operación | Horas/semana | ¿Repetible? | ¿Automatizable? |
+| Operación | Horas/semana | ¿Repetible? | Skill candidato |
 |-----------|-------------|-------------|----------------|
-| [tu operación 1] | X h | Sí/No | Sí/No |
-| [tu operación 2] | X h | ... | ... |
+| [operación 1] | X h | Sí | [skill de este repo] |
+| [operación 2] | X h | Sí | [skill a crear] |
 ```
 
 ### Paso 3: Personaliza un skill por área
 
-Cada skill es un `SKILL.md` con:
-- **Rol del agente** — quién es y qué hace
-- **Restricciones** — qué NUNCA hace (tan importante como lo que sí hace)
-- **Vocabulario** — el lenguaje específico de tu nicho y avatar
-- **Proceso** — los pasos que sigue
-- **Formato de output** — qué entrega exactamente
+Cada `SKILL.md` tiene secciones marcadas que debes adaptar:
+- `[tu nicho]` → reemplaza con tu área de negocio
+- `[avatar]` → reemplaza con tu cliente ideal
+- `[vocabulario del nicho]` → reemplaza con el lenguaje de tu comunidad
+- `[restricciones]` → agrega las específicas de tu sector (legales, éticas, de marca)
 
-Empieza por el área de mayor carga manual. No necesitas todos los skills del día 1.
-
-### Paso 4: Conecta skills con workflows DAG
-
-Un workflow es una secuencia de pasos con gates humanos explícitos:
+### Paso 4: Define los niveles de autonomía
 
 ```markdown
-# mi-workflow.md
-
-## Paso 1: [nombre]
-- Input: [qué necesita]
-- Skill: [cuál skill ejecuta]
-- Output: [qué produce]
-- Gate: [qué aprueba el humano antes de continuar]
-
-## Paso 2: [nombre]
-...
-```
-
-**La regla:** el humano aprueba, el agente ejecuta.
-Ver skill `human-gate-protocol` para el sistema completo.
-
-### Paso 5: Define los niveles de autonomía
-
-No todos los agentes deben tener el mismo nivel de libertad:
-
-```markdown
-# AGENTS.md (crea este archivo en tu repo)
+# AGENTS.md — crea este archivo en tu repo
 
 | Agente | Nivel | Razón |
 |--------|-------|-------|
@@ -284,45 +324,38 @@ No todos los agentes deben tener el mismo nivel de libertad:
 | agente-pagos | L0 | Siempre requiere gate humano |
 ```
 
-Ver skill `modelo-l0-l1-l2` para el sistema de certificación.
-
-### Paso 6: Versiona todo como memoria institucional
-
-Si no está en git, no existe. El conocimiento del negocio debe sobrevivir a cualquier sesión de chat.
+### Paso 5: Versiona como memoria institucional
 
 ```bash
-git add skills/ workflows/ AGENTS.md
-git commit -m "feat: mi business OS — versión inicial"
+git add skills/ workflows/ AGENTS.md mis-operaciones.md
+git commit -m "feat: mi business OS — adaptado para [tu nicho]"
 ```
 
 ---
 
-## Evidencia en Vivo (El Caso de Estudio Que Generó Este Repo)
+## Evidencia en Vivo
 
 | Producto | URL | Estado |
 |---------|-----|--------|
 | Agente Sofía (ventas 24/7) | primerasmiradas.com | ✅ Producción |
 | App mi·ma (tracker bebés) | somosmima.app | ✅ Producción |
 
-Prueba el chat de Sofía — responde en menos de 2 segundos con vocabulario del nicho.
-
 ---
 
 ## 🛠️ Stack Técnico de Referencia
 
-Este es el stack usado en el caso de estudio. **No es una imposición** — adapta a lo que ya conoces.
-
 ```
 Agentes:          Claude Code + SaaS Factory V5
-Framework web:    Next.js 16 + TypeScript
-Estilos:          Tailwind CSS
+Framework web:    Next.js 16 + TypeScript + React 19
+Estilos:          Tailwind CSS 4
 Base de datos:    Supabase (Auth + DB + RLS + pgvector para RAG)
 Backend simple:   Node.js + Express + Railway
 IA rápida:        Groq (llama-3.3-70b — velocidad + costo)
-IA pesada:        OpenRouter (routing por modelo según tarea)
+IA routing:       OpenRouter (modelo correcto para cada tarea)
 Email:            Resend + React Email
 Pagos:            Stripe (transaccional) + Polar (suscripciones)
 Video/TTS:        Kokoro TTS + FFmpeg + HyperFrames
+Automatización:   GitHub Actions + n8n
 Testing:          Playwright
 DNS/CDN:          Cloudflare
 Memoria:          Git + Markdown (Engram protocol)
@@ -330,90 +363,48 @@ Memoria:          Git + Markdown (Engram protocol)
 
 ---
 
-## 🔮 Roadmap de Skills — Lo Que Viene
-
-Estas son las áreas identificadas para documentar como skills en próximas versiones:
-
-### Distribución y Tráfico
-- `landing-page-conversion` — Landing pages de alta conversión: estructura, copy AIDA, A/B testing
-- `seo-programatico` — SEO con IA: miles de páginas indexables generadas automáticamente
-- `social-content-system` — Sistema de contenido: de 1 pieza larga a 10 piezas cortas
-- `video-pipeline-ai` — Pipeline de video con IA: TTS + escenas + FFmpeg + distribución
-
-### Operación de Negocio
-- `analytics-dashboard` — Sistema de métricas: qué medir, cómo visualizarlo, cuándo actuar
-- `customer-success` — Retención y éxito del cliente: onboarding, activación, anti-churn
-- `ecommerce-operator` — Operar una tienda: selección de producto, pricing, fulfillment
-- `pricing-strategy` — Framework de precios: valor percibido, willingness-to-pay, experimentos
-
-### Escalado
-- `team-os` — De 1 persona a equipo: cuándo contratar, cómo documentar para escalar
-- `affiliate-program` — Sistema de afiliados: estructura, comisiones, seguimiento
-- `community-building` — Construir comunidad: de usuarios a embajadores de marca
-
----
-
-## Lecciones Aprendidas (El Oro del Caso de Estudio)
+## Lecciones Aprendidas
 
 ### 1. La arquitectura importa más que las herramientas
 
-Evalúa el costo real de infraestructura ANTES de decidir.
-Un stack de 8 servicios Docker puede costar $40/mes siempre.
-El stack más simple que funcione gana.
+El stack más simple que funcione gana. Evalúa el costo de operación ANTES de comprometerte.
 
 ### 2. "Documentado" ≠ "Ejecutado"
 
-Un brief puede estar al 100% y el resultado en cero si los datos de validación
-están en la máquina local del fundador y no en git.
+Si no está en git, no existe. El conocimiento del negocio debe sobrevivir a cualquier sesión de chat.
 
-**Regla:** si no está en el repo, no cuenta como hecho.
+### 3. El vocabulario del avatar es una restricción técnica, no editorial
 
-### 3. Declara las limitaciones técnicas como parte del diseño
-
-Documentar las limitaciones antes del problema evita horas de debugging.
-La Railway API está bloqueada en algunos entornos cloud — documentarlo evita que lo descubras en producción.
+Encodar el lenguaje específico del nicho como gate obligatorio en cada skill — si el output viola el tono, se rechaza antes de llegar al usuario.
 
 ### 4. Las API keys en historial git son permanentes
 
-Si una key llega a un commit de un repo público, la rotación es la única salida.
+Si llegan a un commit público, la rotación es la única salida. Siempre `${VARIABLE_ENV}`.
 
-**Regla de oro:** nunca pegar keys directamente en chat o código. Siempre `${VARIABLE_ENV}`.
+### 5. La autonomía no se otorga — se gana
 
-### 5. El vocabulario del avatar es una restricción técnica, no editorial
+Un agente L2 no es más inteligente que un L0. Es más confiable — y la confianza se construye con evidencia (ver `modelo-l0-l1-l2`).
 
-"mamis / bb / lechita" vs "infante / paciente / progenitora".
-Encodeado en `SKILL.md` como gate obligatorio — si el output viola el tono, se rechaza.
-No es styleguide. Es parte de la lógica de negocio.
+### 6. El sistema que no se evalúa se degrada
 
-### 6. Separar alcances: el OS ENTRE productos, no DENTRO
-
-Confundir el OS del negocio con el producto genera memorias duplicadas
-y divergencia garantizada.
-
-**Una sola fuente de verdad** para el conocimiento institucional.
-
-### 7. La autonomía no se otorga — se gana
-
-Un agente L2 no es más inteligente que un L0.
-Es más confiable — y la confianza se construye con evidencia, no con fe.
-Ver skill `modelo-l0-l1-l2`.
+Cada agente necesita un harness. Sin evaluación continua, la calidad del output baja sin que nadie lo note (ver `harness-universal`).
 
 ---
 
-## El Patrón de Extracción (Cómo Este Repo Creció)
+## El Patrón de Extracción
 
-Cada sistema que se construyó dejó algo al siguiente:
+Cada sistema construido deja algo al siguiente:
 
 ```
 Sistema terminado
     ↓
-Identificar el núcleo reutilizable (≠ lo específico del caso de estudio)
+Identificar el núcleo reutilizable
     ↓
 Extraer a SKILL.md: Rol + Restricciones + Proceso + Ejemplo
     ↓
 Versionar en skills/ como unidad independiente
     ↓
-Siguiente proyecto hereda el patrón en horas, no en semanas
+Siguiente proyecto hereda el patrón en horas, no semanas
 ```
 
 **Este es el compounding del sistema — cada proyecto deja al siguiente más inteligente.**
@@ -422,30 +413,26 @@ Siguiente proyecto hereda el patrón en horas, no en semanas
 
 ## Cómo Contribuir
 
-Este es un caso de estudio público para aprendizaje colectivo.
-
 **Bienvenido:**
-- Nuevos skills documentados con el formato `SKILL.md`
-- Mejoras a workflows existentes
-- Adaptaciones de los patrones a otros nichos de negocio
+- Nuevos skills con el formato `SKILL.md`
+- Workflows de procesos de negocio que te funcionaron
+- Adaptaciones de skills a otros nichos (reemplaza el nicho, mantén el patrón)
 - Correcciones técnicas y actualizaciones de herramientas
 
-**No incluido (por respeto a terceros y buenas prácticas):**
+**No incluido:**
 - Credenciales, API keys o tokens de ningún tipo
 - Datos de clientes o leads reales
 - Estrategia comercial propietaria no generalizable
-- Información confidencial de proveedores
 
-**Para contribuir:**
 ```bash
-# Fork → crea tu rama → documenta tu skill/workflow → PR
+# Fork → crea tu rama → documenta → PR
 git checkout -b feat/mi-skill-nuevo
-# Crea skills/mi-skill/SKILL.md siguiendo el formato existente
-git commit -m "feat: add [nombre-skill] skill"
+# Crea skills/mi-skill/SKILL.md siguiendo el formato
+git commit -m "feat: add [nombre] skill — [qué aporta]"
 gh pr create
 ```
 
 ---
 
 > Construido con Claude Code + SaaS Factory V5
-> Documentado para la comunidad de fundadores independientes LATAM
+> Caso de estudio real → documentado para la comunidad de fundadores LATAM
