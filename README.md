@@ -435,6 +435,90 @@ Feedback bienvenido — especialmente en el modelo Founders y el punto de precio
 
 ---
 
+## Repositorios Base — De Dónde Viene Cada Pieza
+
+Este sistema no se construyó desde cero. Se adaptó desde repositorios públicos de referencia.
+El valor no está en haber inventado los componentes — está en haberlos **combinado y aplicado a un negocio real**.
+
+Esto es exactamente lo que puedes hacer tú con tu propio negocio.
+
+---
+
+### 1. Everything Claude Code (ECC)
+**`github.com/affaan-m/everything-claude-code`** · 185k+ ⭐
+
+El repositorio que ganó el hackathon de Anthropic (sept 2025). Define la gramática base del sistema:
+cómo se estructuran los skills, cómo funciona la memoria persistente, cómo se conectan agentes
+especializados, y cómo los hooks de calidad se ejecutan automáticamente.
+
+```
+ECC define:
+├── .agents/skills/    → cada skill = un experto especializado (SKILL.md)
+├── .agents/hooks/     → validaciones automáticas antes/después de cada acción
+├── memory/            → contexto persistente entre sesiones
+└── AGENTS.md          → mapa de todos los agentes disponibles
+```
+
+**Qué se adaptó aquí:**
+- La estructura `SKILL.md` (Rol + Restricciones + Proceso + Ejemplo) se mantuvo intacta
+- Se agregó el **vocabulario del nicho** como restricción técnica obligatoria en cada skill
+- Se añadieron **gates humanos explícitos** para decisiones de negocio (no solo de código)
+- El sistema de memoria se extendió con el protocolo Engram para persistencia cross-proyecto
+
+---
+
+### 2. Paperclip AI
+**`github.com/paperclipai/paperclip`** · 69k+ ⭐
+
+El framework open-source para correr una empresa completa con agentes y una sola persona.
+Org charts, presupuestos, gobernanza, heartbeat scheduling, y audit trail — todo para equipos de IA.
+
+```
+Paperclip resuelve:
+├── Cómo asignar trabajo a agentes como si fueran empleados
+├── Cómo controlar costos y presupuestos por agente
+├── Cómo hacer que los agentes retomen contexto entre sesiones
+└── Cómo implementar approval gates antes de acciones críticas
+```
+
+**Qué se adaptó aquí:**
+- El concepto de **org chart de agentes** → skills especializados por vertical de negocio
+- El **heartbeat scheduling** → workflows DAG con cadencias definidas (diario, semanal)
+- Los **approval gates** → gates humanos antes de gasto, publicación o transacción
+- El modelo de **gobernanza** → modelo de autonomía L0/L1/L2 con circuit breakers
+
+---
+
+### 3. SaaS Factory V5
+**Framework de Claude Code** (Anthropic)
+
+El golden path de construcción: Next.js 16 + Supabase + Vercel + Zod + TypeScript strict.
+Define el stack técnico y la arquitectura feature-first. No hay decisiones de stack — ya está elegido.
+
+**Qué se adaptó aquí:**
+- Se usa como capa de **construcción** (dentro de cada producto)
+- Los skills de ECC operan **entre productos** (orquestación cross-pilar)
+- Paperclip informa el modelo de **gobernanza** del portafolio completo
+
+---
+
+### La combinación — por qué los tres juntos
+
+```
+ECC          →  Cómo se definen y ejecutan los agentes
+Paperclip    →  Cómo se organiza una empresa de agentes
+SaaS Factory →  Cómo se construyen los productos que los agentes operan
+
+Resultado    →  Un founder solo puede operar 5 pilares de negocio
+               con la misma estructura que usarías para 15 empleados
+```
+
+Ninguno de estos tres repos resuelve el problema solo.
+ECC da la gramática. Paperclip da la gobernanza. SaaS Factory da el stack.
+**El caso de estudio es la integración.**
+
+---
+
 ## Cómo se Integran Múltiples Repositorios
 
 Este sistema no surgió de un solo repositorio. Es el resultado de integrar varios proyectos que evolucionaron en paralelo con un patrón explícito de separación de responsabilidades.
