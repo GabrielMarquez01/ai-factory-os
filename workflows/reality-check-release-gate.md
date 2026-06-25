@@ -66,18 +66,17 @@ Cerrar el gap entre "creo que está listo" y "está listo con evidencia". En un 
 ### BLOQUE D — Claims y Compliance
 
 ```
-[ ] D1. ¿El contenido contiene afirmaciones médicas?
-       → Buscar: "cura", "previene", "trata", "elimina", "garantiza salud"
+[ ] D1. ¿El contenido contiene afirmaciones que no puedes respaldar?
+       → Buscar: "garantiza", "cura", "elimina", "resultados asegurados"
        → Si sí → identificar línea exacta → NEEDS WORK hasta corregir
 
-[ ] D2. ¿Hay bebés reales identificables?
-       → Revisar imágenes/videos incluidos
-       → Si sí → reemplazar con ilustración/personaje → NEEDS WORK
+[ ] D2. ¿Las imágenes/videos incluyen personas identificables sin permiso?
+       → Si sí → reemplazar con assets propios o con licencia → NEEDS WORK
 
-[ ] D3. ¿Las promesas son verificables?
+[ ] D3. ¿Las promesas del producto son verificables?
        → Revisar CTAs y headlines
-       → "Tu bebé aprenderá X en Y días" sin respaldo → NEEDS WORK
-       → "Apoya el desarrollo sensorial" con contexto educativo → OK
+       → Promesa sin respaldo → NEEDS WORK
+       → Beneficio con contexto y matices → OK
 ```
 
 ### BLOQUE E — Revisión de Plataforma (si aplica a contenido)

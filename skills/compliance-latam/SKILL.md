@@ -34,10 +34,10 @@ Esto no es alarmismo. Es la realidad del ecosistema digital en México y LatAm.
 |-------------|----------------|---------|
 | Nombre + email | Bajo | Newsletter, login |
 | Teléfono + ubicación | Medio | Entregas, soporte |
-| Datos de salud | **Alto** | Historial médico, temperatura, vacunas |
-| Datos de menores | **Muy alto** | Cualquier app para bebés o niños |
+| Datos de salud | **Alto** | Historial médico, síntomas, diagnósticos |
+| Datos de menores de edad | **Muy alto** | Apps educativas, familiares, de seguimiento |
 | Datos financieros | **Alto** | Tarjetas, CLABE, ingresos |
-| Datos biométricos | **Muy alto** | Reconocimiento facial, huella |
+| Datos biométricos | **Muy alto** | Reconocimiento facial, huella digital |
 
 **Contenido mínimo del aviso de privacidad:**
 
@@ -102,32 +102,21 @@ async function borrarCuenta(userId) {
 }
 ```
 
-### 3. Datos de Menores: Las Reglas Más Estrictas
+### 3. Datos de Menores de Edad: Reglas Adicionales
 
-Si tu app procesa datos de bebés o niños menores de 18 años — incluyendo datos que los padres registran sobre sus hijos:
+Si tu producto involucra a usuarios menores de 18 años — ya sea directamente o porque adultos registran datos sobre ellos:
 
 **LFPDPPP (Art. 9):**
-- Requiere consentimiento explícito del padre/madre/tutor
+- Requiere consentimiento explícito del padre/madre/tutor legal
 - No se puede solicitar datos al menor directamente
 - El consentimiento debe ser informado, no implícito
 
-**App Store / Google Play:**
-- Si la app está dirigida a menores → declararlo en la ficha de la app
-- Si mezclas adultos y menores → aplica la política de menores a TODOS
-- No puedes usar publicidad personalizada con menores
+**Plataformas (App Store / Google Play / YouTube):**
+- Si el producto está dirigido a menores → declararlo en la ficha y en el aviso
+- No se puede usar publicidad personalizada con menores
+- Cada plataforma tiene sus propias reglas adicionales — revisar antes de publicar
 
-**Patrón recomendado para apps de seguimiento familiar:**
-
-```markdown
-QUIÉN ES EL USUARIO REGISTRADO: el padre/madre (mayor de edad)
-QUIÉN SON LOS DATOS: del bebé, como tercero bajo custodia del padre
-
-En el aviso de privacidad:
-"Los datos del menor son registrados por el padre/madre/tutor,
-quien tiene la custodia legal de esa información.
-Solo el padre/madre/tutor registrado puede acceder, modificar o solicitar
-la eliminación de los datos del menor."
-```
+**Principio general:** si tu producto toca datos de menores de cualquier forma, consulta a un abogado especializado en privacidad antes de lanzar. Las consecuencias de incumplimiento en este segmento son las más severas.
 
 ### 4. Términos y Condiciones
 
@@ -172,11 +161,11 @@ ANTES DE ACEPTAR PAGOS:
 □ Consentimiento de T&C activo (checkbox antes del pago, no después)
 □ Datos del responsable en el aviso de privacidad actualizados
 
-SI MANEJAS DATOS DE MENORES:
-□ Consentimiento parental explícito en el flujo de registro
+SI TU PRODUCTO INVOLUCRA MENORES DE EDAD:
+□ Consentimiento del tutor legal en el flujo de registro
 □ Sin publicidad personalizada
 □ Declaración en tiendas de apps si corresponde
-□ Política específica de datos de menores en el aviso de privacidad
+□ Asesoría legal especializada antes de lanzar
 ```
 
 ---

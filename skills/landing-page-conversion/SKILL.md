@@ -44,7 +44,7 @@ Es lo primero que lee el visitante. Tienes 3 segundos.
 
 Ejemplos:
 - ❌ "La solución definitiva para tu negocio" (genérico, no dice nada)
-- ✅ "Lleva tu bebé a dormir toda la noche sin llorar ni crear malos hábitos" (específico, habla del dolor real)
+- ✅ "Gestiona tus finanzas en 10 minutos al día sin hoja de cálculo" (específico, habla del dolor real)
 
 **Regla del headline:** si lo lees y no sabes exactamente a quién va dirigido y qué promete → reescríbelo.
 

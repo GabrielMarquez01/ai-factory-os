@@ -71,10 +71,10 @@ Ideal para: educación, FAQs, recursos por categoría.
 Patrón: [pregunta] sobre [entidad del nicho]
 Variantes: M preguntas × N entidades = M×N páginas
 
-Ejemplo (nicho maternidad):
-/cuando-empieza-[hito-de-desarrollo]
-/cuanto-duerme-bebe-[edad-en-meses]
-/signos-de-[condicion]-en-bebes
+Ejemplo (nicho finanzas personales):
+/como-ahorrar-[meta-de-ahorro]
+/cuanto-cuesta-[categoria-de-gasto]-en-[ciudad]
+/diferencia-entre-[termino-a]-y-[termino-b]
 ```
 
 ---

@@ -66,7 +66,7 @@ FORMATOS:   [duración estándar, ratio, idioma]
 ```
 Personajes: 3 personajes con identidades por etapa de desarrollo (0-2m, 2-3m, 3m+)
 Estilo: bloques 2D programáticos (Motion Canvas/Remotion) + clips generados con IA
-Reglas: sin flashes, ritmo lento, paleta suave, Made for Kids (COPPA)
+Reglas: sin flashes, ritmo lento, paleta suave, cumplimiento de plataforma
 Formatos: episodio 5-8 min + versión extendida 30-60 min
 ```
 
@@ -132,7 +132,7 @@ Antes de publicar, verificar:
 
 ```markdown
 CONTENIDO:
-- [ ] El episodio cumple con las reglas de tu plataforma (COPPA, edad, tipo de contenido)
+- [ ] El episodio cumple con las reglas de tu plataforma (edad, tipo de contenido, clasificación)
 - [ ] No hay elementos problemáticos para tu audiencia (definidos en tu Inteligencia de Nicho)
 - [ ] La duración es la correcta para el formato
 

@@ -59,13 +59,13 @@ Lo que ofrecen:
 **Sinergía:** sirven al mismo cliente pero con productos diferentes.
 
 ```
-Ejemplo: si vendes una app para mamás, un afiliado complementario podría ser:
-- Consultora de lactancia
-- Pediatra con contenido digital
-- Tienda de productos para bebé
-- Otra app de maternidad (con diferente función)
+Ejemplo: si vendes una app o curso en un nicho específico, afiliados complementarios podrían ser:
+- Un profesional o consultor del mismo tema en formato diferente
+- Un creador de contenido que ya tiene la confianza de tu audiencia
+- Una tienda de productos físicos relacionados con el nicho
+- Otra herramienta digital con función diferente a la tuya
 
-No son competidores — son socios de canal.
+No son competidores — son socios de canal que ya tienen la confianza de tu audiencia.
 ```
 
 ---
