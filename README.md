@@ -150,6 +150,113 @@ Prueba el chat de Sofia ahora mismo — responde en menos de 2 segundos con voca
 
 ---
 
+## Metodologías Aplicadas
+
+Más allá del stack técnico, el sistema funciona por los **principios de pensamiento** que lo gobiernan.
+Estas metodologías son independientes del nicho y aplicables a cualquier negocio.
+
+---
+
+### 1. Protocolo Karpathy — El agente se optimiza a sí mismo
+
+Inspirado en el trabajo de Andrej Karpathy sobre sistemas que aprenden de sus propios outputs:
+
+```
+Loop de auto-optimización:
+1. El agente ejecuta una tarea (ej: escribir un reel)
+2. Se evalúa el output contra criterios binarios (¿cumple el tono? ¿tiene CTA?)
+3. Si falla → el prompt muta, se re-ejecuta
+4. Si mejora → se guarda la nueva versión
+5. El error nunca ocurre dos veces
+```
+
+En OpenGravity, cada `SKILL.md` tiene un historial de mutaciones. Un skill que lleva 40 iteraciones
+es cualitativamente diferente al que se escribió en el día 1. **La fábrica aprende con cada run.**
+
+**Implementación práctica:** Cada vez que un output viola una restricción, se documenta la restricción
+en el skill correspondiente. El conocimiento se acumula en archivos Markdown versionados en git.
+
+---
+
+### 2. Gates Humanos — El humano decide QUÉ, el agente ejecuta CÓMO
+
+La regla más importante del sistema:
+
+```
+GATE HUMANO obligatorio antes de:
+├── Gasto (contratar, pagar infraestructura, ads)
+├── Publicación (post, email, video)
+└── Transacción (cobrar, contratar, firmar)
+```
+
+Sin gates, la automatización se convierte en un riesgo. Con gates, se convierte en apalancamiento.
+
+El gate no es burocracia — es el punto exacto donde el contexto humano (intuición, relaciones,
+juicio de negocio) complementa la velocidad del agente.
+
+**Regla derivada:** Si una decisión puede revertirse con bajo costo, el agente puede ejecutarla solo.
+Si es irreversible o afecta a terceros, siempre requiere gate humano.
+
+---
+
+### 3. Engram — El documento como fuente única de verdad
+
+El conocimiento del negocio vive en archivos Markdown versionados en git. No en la cabeza del founder.
+No en un chat de WhatsApp. No en la memoria de una sesión de IA.
+
+```
+Principio Engram:
+"Si no está en git, no existe."
+
+skill/ → qué puede hacer cada agente
+workflows/ → cómo se conectan los agentes
+SKILL.md → contexto, restricciones, ejemplos del agente
+```
+
+**Por qué funciona:**
+- Persiste entre sesiones de IA (Claude Code, Cursor, cualquier LLM)
+- Es auditable (git history = historial de decisiones)
+- Es compartible (otro founder puede retomar el negocio desde el repo)
+- Sobrevive a cambios de herramientas
+
+**El anti-patrón:** guardar el conocimiento en el historial de un chat. Cuando el contexto
+se borra, ese conocimiento desaparece. El Engram resuelve esto.
+
+---
+
+### 4. Harness Universal — La estructura como andamio adaptable
+
+Los 60 skills y 26 workflows de OpenGravity siguen una gramática consistente que actúa
+como **andamio universal**: puedes intercambiar el nicho (mamás con bebés → agencia legal →
+e-commerce de ropa) sin cambiar la estructura.
+
+```
+Harness (estructura invariante):
+├── SKILL.md          → Rol + Restricciones + Vocabulario + Proceso + Ejemplo
+├── WORKFLOW.md       → Trigger + Fases + Gates + Output esperado
+└── MEMORY/           → Estado actual + Decisiones + Referencias
+
+Contenido (lo que cambia por nicho):
+├── Avatar del cliente
+├── Vocabulario del nicho
+├── Reglas de negocio específicas
+└── Integraciones (Stripe, Supabase, etc.)
+```
+
+Esta separación entre estructura y contenido permite que el sistema se transfiera.
+Ver [`docs/como-adaptar.md`](docs/como-adaptar.md) para el proceso paso a paso.
+
+---
+
+### Sobre la Estrategia de Precios
+
+Se incluye el razonamiento de precios completo (con preguntas abiertas) en:
+📄 [`docs/estrategia-precios.md`](docs/estrategia-precios.md)
+
+Feedback bienvenido — especialmente en el modelo Founders y el punto de precio del freemium.
+
+---
+
 ## Lecciones Aprendidas (el oro del caso de estudio)
 
 ### 1. La arquitectura importa más que las herramientas
