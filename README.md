@@ -6,6 +6,23 @@
 
 ---
 
+## Qué es esto — y qué no es
+
+**Es:**
+- Una arquitectura real probada en producción con 5 líneas de negocio activas
+- Código funcional listo para copiar: schema SQL, endpoints Next.js, templates de email, harness de evaluación
+- 38 skills (instrucciones de agente) + 8 workflows DAG adaptables a cualquier nicho en 1-2 días
+- Compatible con cualquier AI IDE: Claude Code, Cursor, Codex, Antigravity — elige el que ya usas
+
+**No es:**
+- Un producto que se instala y corre solo — los skills tienen placeholders que tú rellenas con tu nicho
+- Un reemplazo de lo que construyes (tu app, tu SaaS) — es el sistema que lo opera
+- Un tutorial introductorio — asume que ya tienes un proyecto o sabes lo básico de Next.js + Supabase
+
+> Si buscas la capa de construcción técnica (auth, pagos, deploy), combínalo con [SaaS Factory](https://github.com/GabrielMarquez01/saas-factory-v5). Los dos juntos cierran el loop completo: construir + operar.
+
+---
+
 ## ¿Qué es un "Business OS"?
 
 Un Business OS (Sistema Operativo de Negocio) es la capa de inteligencia que coordina todos los agentes, workflows y herramientas de tu empresa.
